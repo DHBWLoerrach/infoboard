@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bb_background4"
+    android:columnCount="4"
+    android:padding="@dimen/activity_vertical_margin"
+    android:rowCount="4" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" >
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/relativeLayout2"
+        android:layout_toLeftOf="@+id/relativeLayout2"
+        android:indeterminateDrawable="@drawable/mypspinner"
+        android:indeterminateDuration="50" />
+
+    <ImageView
+        android:id="@+id/image_profilansicht_bild"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/progressBar2"
+        android:layout_alignRight="@+id/textView1"
+        android:src="@drawable/bbtext" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout2"
+        android:layout_centerHorizontal="true"
+        android:text="@string/verbinde_mit_datenbank_" />
+
+</RelativeLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linlayoutBase"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bb_background2"
+    android:orientation="vertical"
+    android:padding="15dp" >
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:background="@color/DHBW_gray_light"
+        android:padding="3dp"
+        android:text="@string/abonnements"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/DHBW_gray_dark"
+        android:textSize="23sp" />
+
+    <TextView
+        android:id="@+id/tv_detailview_titel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:background="@color/DHBW_gray_light"
+        android:padding="3dp"
+        android:text="@string/abobescheibung"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/DHBW_gray_dark"
+        android:textSize="13sp" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/DHBW_gray_light" >
+
+        <LinearLayout
+        android:id="@+id/linearLayoutCheckedTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+    </LinearLayout>
+    </ScrollView>
+
+    
+
+		<LinearLayout
+		    android:id="@+id/linlayoutButtons"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="0"
+		    android:background="@color/DHBW_gray_light"
+		    android:orientation="vertical"
+		    android:paddingBottom="5dp"
+		    android:paddingLeft="3dp"
+		    android:paddingRight="3dp" >
+			
+		<Button
+		    android:id="@+id/button_AboListe_Speichern"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:paddingLeft="3dp"
+		    android:text="@string/abo_eintragen" >
+
+		</Button>
+	</LinearLayout>
+</LinearLayout>

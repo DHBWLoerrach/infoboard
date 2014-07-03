@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.blackboarddhbwloe"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="15" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/bb_logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.blackboarddhbwloe.splash"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" >
+                </action>
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.blackboarddhbwloe.MainActivity"
+            android:label="@string/label_hauptmenue"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.example.blackboarddhbwloe.main" >
+                </action>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.blackboarddhbwloe.main.InseratListe"
+            android:label="@string/label_angebote"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.example.blackboarddhbwloe.INSERATLISTE" />
+                <action android:name="android.intent.action.SEARCH" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name="com.example.blackboarddhbwloe.userarea.AnzeigeSchalten"
+            android:label="@string/label_anzeigeschalten"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.example.blackboarddhbwloe.ANZEIGESCHALTEN" >
+                </action>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.blackboarddhbwloe.main.DetailSuche"
+            android:label="@string/label_suche"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.example.blackboarddhbwloe.DETAILSUCHE" >
+                </action>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.blackboarddhbwloe.main.DetailView"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.example.blackboarddhbwloe.DETAILVIEW" >
+                </action>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.blackboarddhbwloe.useraccess.LoginScreen"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="com.example.blackboarddhbwloe.LOGINSCREEN" >
+                </action>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.blackboarddhbwloe.main.BenutzerBereich"
+            android:label="@string/label_benutzerbereich"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.example.blackboarddhbwloe.BENUTZERBEREICH" >
+                </action>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.blackboarddhbwloe.userarea.KontoVerwaltung"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.example.blackboarddhbwloe.KONTOVERWALTUNG" >
+                </action>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.blackboarddhbwloe.useraccess.ChangePassword"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="com.example.blackboarddhbwloe.CHANGEPASSWORD" >
+                </action>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.blackboarddhbwloe.useraccess.RegistrationScreen"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="com.example.blackboarddhbwloe.REGISTRATION" >
+                </action>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.blackboarddhbwloe.userarea.AboListe"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.example.blackboarddhbwloe.MEINEABOS" >
+                </action>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.blackboarddhbwloe.userarea.KontaktFormular"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="com.example.blackboarddhbwloe.KONTAKT" >
+                </action>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.blackboarddhbwloe.userarea.MeinBenutzerProfil"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="com.example.blackboarddhbwloe.MEINBENUTZERPROFIL" >
+                </action>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.blackboarddhbwloe.userarea.ProfilAnsicht"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="com.example.blackboarddhbwloe.PROFILANSICHT" >
+                </action>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.blackboarddhbwloe.userarea.Kontaktieren"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.example.blackboarddhbwloe.KONTAKTIEREN" >
+                </action>
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.blackboarddhbwloe.widget.WidgetKonfiguration"
+            android:label="@string/title_activity_widget_konfiguration" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="com.example.blackboarddhbwloe.widget.BBWidgetProvider" >
+            <intent-filter>
+                <action android:name="com.example.blackboarddhbwloe.widget.BBWidgetProvider.UPDATE_LIST" />
+                <action android:name="com.example.blackboarddhbwloe.widget.BBWidgetProvider.GO_DETAILVIEW" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/bbwidget_info" />
+        </receiver>
+
+        <service
+            android:name="com.example.blackboarddhbwloe.widget.BBWidgetRemoteViewsService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" >
+        </service>
+    </application>
+
+</manifest>

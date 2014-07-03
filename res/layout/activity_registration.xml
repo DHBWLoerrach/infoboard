@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bb_background2"
+    android:orientation="vertical"
+    android:padding="25dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/image_profilansicht_bild"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bb_logo" />
+
+        <TextView
+            android:id="@+id/tv_Login"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_gravity="bottom"
+            android:background="@color/DHBW_gray_light"
+            android:gravity="center|left"
+            android:paddingLeft="10dp"
+            android:text="@string/registration"
+            android:textColor="@color/DHBW_gray_dark"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@color/DHBW_gray_light"
+        android:orientation="vertical"
+        android:paddingBottom="15dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="15dp" >
+
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:text="@string/join_the_community_"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/DHBW_gray_dark"
+            android:textColorHint="@color/DHBW_gray_light"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:text="@string/geben_sie_ihren_dhbw_benutzernamen_ein_"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/DHBW_gray_dark"
+            android:textColorHint="@color/DHBW_gray_light" />
+
+        <EditText
+            android:id="@+id/tv_Registration_Anmeldung_User"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@color/DHBW_white"
+            android:ems="10"
+            android:gravity="left"
+            android:singleLine="true"
+            android:hint="@string/benutzer"
+            android:textSize="23sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="15dp" >
+
+            <TextView
+                android:id="@+id/tv_detailview_titel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/in_k_rze_bekommen_sie_eine_email_mit_ihren_zugangsdaten"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/DHBW_gray_dark" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonRegistrationSenden"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/email_senden"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+</LinearLayout>

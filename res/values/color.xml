@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+    <color name="DHBW_white">#ffffff</color>
+    <color name="DHBW_gray_light">#B3efefef</color>
+    <color name="DHBW_gray_dark">#7d8990</color>
+    <color name="DHBW_red_light">#e2001e</color>
+    <color name="DHBW_red_dark">#8e1016</color>
+    <color name="DHBW_teal_light">#661ebdaf</color>
+
+</resources>

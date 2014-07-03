@@ -1,0 +1,37 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    
+    <style name="AppTheme" parent="AppBaseTheme">
+        
+    </style>
+    
+    <style name="DHBW_Button" parent="AppBaseTheme">
+        <item name="android:textColor">@color/DHBW_white</item>
+        <item name="android:background">@drawable/button_pressed_state_selector</item>
+    </style>
+    
+    <style name="DHBW_Textfields" parent="AppBaseTheme">
+        <item name="android:textColor">@color/DHBW_white</item>
+        <item name="android:background">@color/DHBW_gray_light</item>
+    </style>
+    
+    <style name="DHBW_Inputfields" parent="AppBaseTheme">
+        <item name="android:textColor">@color/DHBW_gray_dark</item>
+        <item name="android:background">@color/DHBW_gray_light</item>
+    </style>
+    
+
+</resources>

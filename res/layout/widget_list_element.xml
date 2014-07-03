@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/list_row_element"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:alpha="0.9"
+    android:background="@drawable/list_selector"
+    android:orientation="horizontal"
+    android:padding="5dip" >
+
+    <TextView
+        android:id="@+id/tv_widget_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="BMW E30 M3"
+        android:textColor="#040404"
+        android:textSize="20dip"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <TextView
+        android:id="@+id/tv_widget_kuBeschreibung"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_widget_title"
+        android:layout_marginTop="1dip"
+        android:maxLines="1"
+        android:text="Top zustand , keine Mängel ... "
+        android:textColor="#343434"
+        android:textSize="15dip" />
+
+    <TextView
+        android:id="@+id/tv_widget_preis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/title"
+        android:layout_alignParentRight="true"
+        android:text="5:45"
+        android:textColor="#10bcc9"
+        android:textSize="15dip"
+        android:textStyle="bold" />
+
+</RelativeLayout>

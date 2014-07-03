@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<string-array name="kat">
+    <item>Bekleidung</item>
+    <item>Bücher</item>
+    <item>Bürobedarf</item>
+    <item>Computer und Zubehör</item>
+    <item>Drogerie</item>
+    <item>Elektrogeräte</item>
+    <item>Filme und TV</item>
+    <item>Geschenkgutscheine</item>
+    <item>Haustier</item>
+    <item>Kamera und Foto</item>
+    <item>KFZ</item>
+    <item>KFZ Zubehör</item>
+    <item>Küche und Haushalt</item>
+    <item>Musik</item>
+    <item>Musikinstrumente</item>
+   	<item>Rucksäcke und Taschen </item>
+    <item>Schmuck</item>
+    <item>Software und Games</item>
+    <item>Spielzeug</item>
+    <item>Sport</item>
+</string-array>
+
+<string-array name="katSuche">
+    <item>Bitte wählen</item>
+    <item>Bekleidung</item>
+    <item>Bücher</item>
+    <item>Bürobedarf</item>
+    <item>Computer und Zubehör</item>
+    <item>Drogerie</item>
+    <item>Elektrogeräte</item>
+    <item>Filme und TV</item>
+    <item>Geschenkgutscheine</item>
+    <item>Haustier</item>
+    <item>Kamera und Foto</item>
+    <item>KFZ</item>
+    <item>KFZ Zubehör</item>
+    <item>Küche und Haushalt</item>
+    <item>Musik</item>
+    <item>Musikinstrumente</item>
+   	<item>Rucksäcke und Taschen </item>
+    <item>Schmuck</item>
+    <item>Software und Games</item>
+    <item>Spielzeug</item>
+    <item>Sport</item>
+</string-array>
+
+</resources>

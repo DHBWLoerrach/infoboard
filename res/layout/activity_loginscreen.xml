@@ -1,0 +1,88 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bb_background2"
+    android:orientation="vertical"
+    android:padding="25dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/image_profilansicht_bild"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bb_logo" />
+
+        <TextView
+            android:id="@+id/tv_Login"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_gravity="bottom"
+            android:background="@color/DHBW_gray_light"
+            android:gravity="left|center"
+            android:paddingLeft="10dp"
+            android:text="@string/anmeldung"
+            android:textColor="@color/DHBW_gray_dark"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@color/DHBW_gray_light"
+        android:orientation="vertical"
+        android:paddingBottom="15dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="15dp" >
+
+        <EditText
+            android:id="@+id/Anmeldung_LoginScreen_Username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="@color/DHBW_white"
+            android:ems="10"
+            android:gravity="left"
+            android:hint="@string/benutzer"
+            android:text="@string/komiatsm"
+            android:textSize="23sp" />
+
+        <EditText
+            android:id="@+id/Anmeldung_LoginScreen_Pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@color/DHBW_white"
+            android:ems="10"
+            android:hint="@string/passwort"
+            android:inputType="textPassword"
+            android:text="@string/k1"
+            android:textSize="23sp" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/button_LoginScreen_Anmeldung"
+            style="dhbw_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/anmeldung"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/Button_Loginscreen_Regist"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/registration"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>
