@@ -33,6 +33,7 @@ import com.example.blackboarddhbwloe.MainActivity;
 import com.example.blackboarddhbwloe.R;
 import com.example.blackboarddhbwloe.tools.DB;
 import com.example.blackboarddhbwloe.tools.ImageFTPClient;
+import com.example.blackboarddhbwloe.tools.Mail;
 /**
  * 
  * DetailView ist die Klasse in welcher die Funktionen und Darstellung,
@@ -55,6 +56,9 @@ public class DetailView extends Activity implements OnTouchListener {
 
 	private String path;
 	static String inseratErsteller;
+	
+	//variable verhindert das mehrmalige Drücken den Butto Inserat melden.
+	boolean inseratWurdeGemeldet=false; 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -98,7 +102,7 @@ public class DetailView extends Activity implements OnTouchListener {
 	 * getDetailViewData ruft die Inserat-speziefischen Daten von der Datenbank ab.
 	 */
 	private void getDetailViewData() {
-		rs = DB.getRSFromDB("select Inserate.id,titel,kategorie,preis,userID,biete,datum,beschreibung,username From Inserate, tblUser "
+		rs = DB.getRSFromDB("select Inserate.id,titel,kategorie,preis,userID,biete,datum,beschreibung,username, anzahlMeldungen, gemeldetVon From Inserate, tblUser "
 				+ "where Inserate.ID ="
 				+ ANGEBOTSID
 				+ " and Inserate.userID = tblUser.id" + " order by datum desc");
@@ -197,6 +201,16 @@ public class DetailView extends Activity implements OnTouchListener {
 						startActivity(intentLogin);
 
 					}
+				}
+			});
+			
+			Button buttonInseratMelden = (Button) findViewById(R.id.button_detailView_inseratMelden);
+			buttonInseratMelden.setVisibility(View.VISIBLE);
+			buttonInseratMelden.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					eintragMelden();
 				}
 			});
 
@@ -343,6 +357,80 @@ public class DetailView extends Activity implements OnTouchListener {
 								finish();
 								Toast.makeText(getApplicationContext(),
 										R.string.inserat_wurde_gel_scht,
+										Toast.LENGTH_LONG).show();
+							}
+						})
+				.setNegativeButton(R.string.abbrechen,
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog,
+									int which) {
+								// do nothing
+							}
+						}).show();
+	}
+	
+	public void eintragMelden() {
+
+		AlertDialog.Builder builder = new AlertDialog.Builder(DetailView.this);
+		builder.setTitle("Beitrag Melden")
+				.setMessage("Soll der Beitrag gemeldet werden?")
+				.setPositiveButton(android.R.string.yes,
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog,
+									int which) {
+								
+							try {
+								int anzahlMeldungen = rs.getInt("anzahlMeldungen");
+								String gemeldetVon = rs.getString("gemeldetVon");
+								
+								//prüfe ob das Inserat bereits zuvor ODER gerade eben schon vom User gemeldet wurde. (zweite Bedinung verhindert Mail-SPAM) Wenn nein schreibe den Usernamen in das Feld gemeldetVon hinzu und erhöhe den counter anzahlMeldungen um 1
+								if(gemeldetVon.contains(MainActivity.USERNAME)==false || inseratWurdeGemeldet==false)
+								{
+									inseratWurdeGemeldet=true;
+									System.out.println("Meldung: username ist in gemeldetVon:"+gemeldetVon+","+MainActivity.USERNAME);
+									//Schreibe den usernamen in das Feld gemeldetVon hinzu
+									gemeldetVon = gemeldetVon+","+MainActivity.USERNAME;
+									//erhöhe den Counter anzahlMeldungen um 1
+									anzahlMeldungen=anzahlMeldungen+1;
+									
+									//Wenn Anzahl Meldungen jetzt bei 3 ist...
+									if(anzahlMeldungen==3)
+									{
+										//Hole die Mail des Admin
+										ResultSet rs2;
+										rs2 = DB.getRSFromDB("SELECT benutzername FROM tblAdmin");
+										while(rs2.next())
+										{
+										String adminMail = rs2.getString("benutzername");
+										
+										//Erzeuge eine Email-Benachrichtigung an den Admin
+										Mail.sendMail(
+												adminMail,
+												gemeldetVon
+														+ " haben das Inserat mit der ID="+ANGEBOTSID+" als Verstoß gemeldet.",
+												"DHBW-Blackboard Verstoß. Inserat wurde gemeldet. Bitte um weitere Prüfung.");
+										System.out.println("MELDUNG: Email an Admin gesendet: " + adminMail);
+									}}
+									
+									//schreibe den neuen CounterWert und gemeldetVon in die DB
+									DB.addValueToDB("UPDATE Inserate SET anzahlMeldungen="+anzahlMeldungen+",gemeldetVon='"+gemeldetVon+"' WHERE id="+ANGEBOTSID);
+									System.out.println("MELDEUNG: Meldungsfelder aktualisiert");
+								}
+								else
+								{
+									System.out.println("MELDUNG: User hat bereits gemeldet");
+								}
+								
+
+								
+							} catch (SQLException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+							
+							
+								Toast.makeText(getApplicationContext(),
+										"Beitrag wurde gemeldet",
 										Toast.LENGTH_LONG).show();
 							}
 						})

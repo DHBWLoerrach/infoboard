@@ -131,12 +131,12 @@
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_gravity="left"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="10dp"
                 android:layout_row="4"
                 android:background="@color/DHBW_white"
                 android:ems="10"
-                android:singleLine="true"
-                android:scrollbars="vertical" />
+                android:scrollbars="vertical"
+                android:singleLine="true" />
 
             <TextView
                 android:id="@+id/TextView_bild"
@@ -168,15 +168,18 @@
 
                 <Button
                     android:id="@+id/button2"
+                    style="@style/DHBW_Button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
                     android:minHeight="35dp"
                     android:onClick="runImageHelper"
-                    android:text="@string/bild_hinzufuegen" 
+                    android:text="@string/bild_hinzufuegen"
                     android:textSize="15sp" />
 
                 <Button
                     android:id="@+id/buttonCam"
+                    style="@style/DHBW_Button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="35dp"

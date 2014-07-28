@@ -7,5 +7,11 @@
     <color name="DHBW_red_light">#e2001e</color>
     <color name="DHBW_red_dark">#8e1016</color>
     <color name="DHBW_teal_light">#661ebdaf</color>
+    <color name="black">#000000</color>
+    <color name="DHBW_transparent">#00000000</color>
+    <color name="DHBW_transparent_highlight">#95FFFFFF</color>
+
+    
+  
 
 </resources>

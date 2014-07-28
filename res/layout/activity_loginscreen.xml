@@ -13,7 +13,7 @@
             android:id="@+id/image_profilansicht_bild"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/bb_logo" />
+            android:src="@drawable/icon_anmeldung" />
 
         <TextView
             android:id="@+id/tv_Login"
@@ -68,7 +68,7 @@
 
         <Button
             android:id="@+id/button_LoginScreen_Anmeldung"
-            style="dhbw_button"
+            style="@style/DHBW_Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -77,6 +77,7 @@
 
         <Button
             android:id="@+id/Button_Loginscreen_Regist"
+            style="@style/DHBW_Button"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

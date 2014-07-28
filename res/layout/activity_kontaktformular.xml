@@ -81,7 +81,7 @@
                     style="@style/DHBW_Inputfields"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
+                    android:layout_marginBottom="25dp"
                     android:ems="10"
                     android:hint="@string/nachricht"
                     android:inputType="textMultiLine"
@@ -92,6 +92,7 @@
 
     <Button
         android:id="@+id/button_kontaktformular_senden"
+        style="@style/DHBW_Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/senden" />

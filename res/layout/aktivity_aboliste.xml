@@ -7,17 +7,31 @@
     android:orientation="vertical"
     android:padding="15dp" >
 
-    <TextView
-        android:id="@+id/TextView01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="3dp"
-        android:background="@color/DHBW_gray_light"
-        android:padding="3dp"
-        android:text="@string/abonnements"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/DHBW_gray_dark"
-        android:textSize="23sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:src="@drawable/icon_meine_abos" />
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="3dp"
+            android:background="@color/DHBW_gray_light"
+            android:padding="3dp"
+            android:text="@string/abonnements"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/DHBW_gray_dark"
+            android:textSize="23sp" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tv_detailview_titel"
@@ -62,6 +76,7 @@
 			
 		<Button
 		    android:id="@+id/button_AboListe_Speichern"
+		    style="@style/DHBW_Button"
 		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
 		    android:paddingLeft="3dp"
@@ -69,4 +84,5 @@
 
 		</Button>
 	</LinearLayout>
+
 </LinearLayout>

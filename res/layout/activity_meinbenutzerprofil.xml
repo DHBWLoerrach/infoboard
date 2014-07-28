@@ -92,6 +92,7 @@
 
             <Button
                 android:id="@+id/button_profil_avatar"
+                style="@style/DHBW_Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
@@ -99,6 +100,7 @@
 
             <Button
                 android:id="@+id/button_benutzerprofil_senden"
+                style="@style/DHBW_Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/senden" />

@@ -8,79 +8,82 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-    <ImageView
-        android:id="@+id/image_profilansicht_bild"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:src="@drawable/bb_logo" />
-
 </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/DHBW_gray_light"
+        android:orientation="vertical" >
+
         <LinearLayout
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
             android:weightSum="2" >
 
             <Button
                 android:id="@+id/ButtonAnzeigeSchalten"
-                style="@style/DHBW_Button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginRight="5dp"
+                style="@style/DHBW_icon_Button"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:text="@string/anzeige_nschalten"
-                />
+                android:drawableTop="@drawable/icon_anzeige_schalten"
+                android:text="Anzeige\nSchalten" />
 
             <Button
                 android:id="@+id/ButtonMeineAnzeigen"
-                style="@style/DHBW_Button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/DHBW_icon_Button"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="10dp"
                 android:layout_weight="1"
-                android:text="@string/meine_nanzeigen"
-                 />
+                android:drawableTop="@drawable/icon_meine_anzeigen"
+                android:text="Meine\nAnzeigen" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="5dp"
-            
             android:gravity="center_horizontal"
             android:orientation="horizontal"
             android:weightSum="2" >
 
             <Button
                 android:id="@+id/ButtonKontoVerwaltung"
-                 style="@style/DHBW_Button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginRight="5dp"
+                style="@style/DHBW_icon_Button"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:text="@string/_konto_nverwaltung"
-                />
+                android:drawableTop="@drawable/icon_kontoverwaltung"
+                android:text="Konto\nVerwaltung" />
 
             <Button
                 android:id="@+id/ButtonBenutzerbereich_MeineAbos"
-                style="@style/DHBW_Button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                style="@style/DHBW_icon_Button"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
                 android:layout_weight="1"
-                android:text="@string/meine_nabos" />
-
+                android:drawableTop="@drawable/icon_meine_abos"
+                android:text="Meine\nAbos" />
         </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>

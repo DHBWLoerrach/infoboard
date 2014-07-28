@@ -20,7 +20,11 @@ public final class R {
         public static final int DHBW_red_dark=0x7f050004;
         public static final int DHBW_red_light=0x7f050003;
         public static final int DHBW_teal_light=0x7f050005;
+        public static final int DHBW_transparent=0x7f050007;
+        public static final int DHBW_transparent_highlight=0x7f050008;
         public static final int DHBW_white=0x7f050000;
+        public static final int black=0x7f050006;
+        public static final int colorchange=0x7f050009;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -40,127 +44,147 @@ public final class R {
         public static final int bb_button=0x7f020004;
         public static final int bb_button_pressedstate=0x7f020005;
         public static final int bb_contakticon=0x7f020006;
-        public static final int bb_logo=0x7f020007;
-        public static final int bb_mailicon=0x7f020008;
-        public static final int bb_mailicon2=0x7f020009;
-        public static final int bb_noimage=0x7f02000a;
-        public static final int bb_notificationicon=0x7f02000b;
-        public static final int bb_profileimage=0x7f02000c;
-        public static final int bb_smsicon=0x7f02000d;
-        public static final int bb_splash=0x7f02000e;
-        public static final int bb_sync=0x7f02000f;
-        public static final int bb_telicon=0x7f020010;
-        public static final int bb_widget_config=0x7f020011;
-        public static final int bbtext=0x7f020012;
-        public static final int button_pressed_state_selector=0x7f020013;
-        public static final int dhprocess=0x7f020014;
-        public static final int gradient_bg=0x7f020015;
-        public static final int gradient_bg_hover=0x7f020016;
-        public static final int gradient_bg_newitem=0x7f020017;
-        public static final int gradient_bg_splash=0x7f020018;
-        public static final int ic_launcher=0x7f020019;
-        public static final int ic_search=0x7f02001a;
-        public static final int image_bg=0x7f02001b;
-        public static final int list_selector=0x7f02001c;
-        public static final int list_selector_newitem=0x7f02001d;
-        public static final int mypspinner=0x7f02001e;
-        public static final int pfeil=0x7f02001f;
+        public static final int bb_dhbw_logo=0x7f020007;
+        public static final int bb_logo=0x7f020008;
+        public static final int bb_mailicon=0x7f020009;
+        public static final int bb_mailicon2=0x7f02000a;
+        public static final int bb_noimage=0x7f02000b;
+        public static final int bb_notificationicon=0x7f02000c;
+        public static final int bb_profileimage=0x7f02000d;
+        public static final int bb_smsicon=0x7f02000e;
+        public static final int bb_splash=0x7f02000f;
+        public static final int bb_sync=0x7f020010;
+        public static final int bb_telicon=0x7f020011;
+        public static final int bb_widget_config=0x7f020012;
+        public static final int bbtext=0x7f020013;
+        public static final int button_pressed_state_selector=0x7f020014;
+        public static final int dhprocess=0x7f020015;
+        public static final int gradient_actionbar=0x7f020016;
+        public static final int gradient_bg=0x7f020017;
+        public static final int gradient_bg_hover=0x7f020018;
+        public static final int gradient_bg_newitem=0x7f020019;
+        public static final int gradient_bg_splash=0x7f02001a;
+        public static final int gradient_dhbw_button=0x7f02001b;
+        public static final int gradient_dhbw_icon_button=0x7f02001c;
+        public static final int ic_launcher=0x7f02001d;
+        public static final int ic_search=0x7f02001e;
+        public static final int icon_angebote=0x7f02001f;
+        public static final int icon_anmeldung=0x7f020020;
+        public static final int icon_anzeige_schalten=0x7f020021;
+        public static final int icon_benutzer_profil=0x7f020022;
+        public static final int icon_benutzerbereich=0x7f020023;
+        public static final int icon_detailsuche=0x7f020024;
+        public static final int icon_gesuche=0x7f020025;
+        public static final int icon_kontoverwaltung=0x7f020026;
+        public static final int icon_meine_abos=0x7f020027;
+        public static final int icon_meine_anzeigen=0x7f020028;
+        public static final int icon_passwort_erneuern=0x7f020029;
+        public static final int icon_pressed_state_selector=0x7f02002a;
+        public static final int icon_registration=0x7f02002b;
+        public static final int image_bg=0x7f02002c;
+        public static final int list_selector=0x7f02002d;
+        public static final int list_selector_newitem=0x7f02002e;
+        public static final int mypspinner=0x7f02002f;
+        public static final int pfeil=0x7f020030;
+        public static final int shape=0x7f020031;
     }
     public static final class id {
-        public static final int Anmeldung_LoginScreen_Pass=0x7f0b002c;
-        public static final int Anmeldung_LoginScreen_Username=0x7f0b002b;
+        public static final int Anmeldung_LoginScreen_Pass=0x7f0b002d;
+        public static final int Anmeldung_LoginScreen_Username=0x7f0b002c;
         public static final int Beschreibung=0x7f0b000e;
-        public static final int ButtonAngebote=0x7f0b0030;
-        public static final int ButtonAnzeigeSchalten=0x7f0b0014;
-        public static final int ButtonBenutzerbereich=0x7f0b0033;
-        public static final int ButtonBenutzerbereich_MeineAbos=0x7f0b0017;
-        public static final int ButtonDetailSuche=0x7f0b0032;
-        public static final int ButtonGesuche=0x7f0b0031;
-        public static final int ButtonKontoVerwaltung=0x7f0b0016;
-        public static final int ButtonMeineAnzeigen=0x7f0b0015;
-        public static final int ButtonSetLastLogin=0x7f0b002a;
-        public static final int Button_Loginscreen_Regist=0x7f0b002e;
-        public static final int Button_kontoverwaltung_PasswortErneuern=0x7f0b0028;
-        public static final int CBoxSearch=0x7f0b0043;
+        public static final int ButtonAngebote=0x7f0b0031;
+        public static final int ButtonAnzeigeSchalten=0x7f0b0013;
+        public static final int ButtonBenutzerbereich=0x7f0b0034;
+        public static final int ButtonBenutzerbereich_MeineAbos=0x7f0b0016;
+        public static final int ButtonDetailSuche=0x7f0b0033;
+        public static final int ButtonGesuche=0x7f0b0032;
+        public static final int ButtonKontoVerwaltung=0x7f0b0015;
+        public static final int ButtonMeineAnzeigen=0x7f0b0014;
+        public static final int ButtonSetLastLogin=0x7f0b002b;
+        public static final int Button_Loginscreen_Regist=0x7f0b002f;
+        public static final int Button_kontoverwaltung_PasswortErneuern=0x7f0b0029;
+        public static final int CBoxSearch=0x7f0b0044;
         public static final int InseratTitel=0x7f0b0005;
         public static final int Kategorie=0x7f0b0007;
         public static final int LinearLayout1=0x7f0b0001;
         public static final int Preis=0x7f0b0009;
-        public static final int Preis_bis=0x7f0b0045;
-        public static final int Preis_von=0x7f0b0044;
-        public static final int RelativeLayout1=0x7f0b0054;
-        public static final int SuchfeldText=0x7f0b0042;
+        public static final int Preis_bis=0x7f0b0046;
+        public static final int Preis_von=0x7f0b0045;
+        public static final int RelativeLayout1=0x7f0b0056;
+        public static final int SuchfeldText=0x7f0b0043;
         public static final int TextView01=0x7f0b0002;
-        public static final int TextView02=0x7f0b003f;
+        public static final int TextView02=0x7f0b0040;
         public static final int TextView_beschreibung=0x7f0b000d;
         public static final int TextView_bild=0x7f0b000f;
         public static final int TextView_kategorie=0x7f0b0006;
         public static final int TextView_preis=0x7f0b0008;
         public static final int TextView_titel=0x7f0b0004;
-        public static final int action_settings=0x7f0b005c;
+        public static final int action_settings=0x7f0b005e;
         public static final int button2=0x7f0b0011;
         public static final int buttonCam=0x7f0b0012;
         public static final int buttonChangePassword_ChangePass=0x7f0b001b;
-        public static final int buttonRegistrationSenden=0x7f0b0041;
-        public static final int button_AboListe_Speichern=0x7f0b004b;
-        public static final int button_LoginScreen_Anmeldung=0x7f0b002d;
-        public static final int button_benutzerprofil=0x7f0b0029;
-        public static final int button_benutzerprofil_senden=0x7f0b003a;
-        public static final int button_detailView_angebotEntfernen=0x7f0b0022;
+        public static final int buttonRegistrationSenden=0x7f0b0042;
+        public static final int button_AboListe_Speichern=0x7f0b004d;
+        public static final int button_LoginScreen_Anmeldung=0x7f0b002e;
+        public static final int button_benutzerprofil=0x7f0b002a;
+        public static final int button_benutzerprofil_senden=0x7f0b003b;
+        public static final int button_detailView_angebotEntfernen=0x7f0b0023;
+        public static final int button_detailView_inseratMelden=0x7f0b0022;
         public static final int button_detailview_profilansicht=0x7f0b0021;
-        public static final int button_kontaktformular_senden=0x7f0b0027;
-        public static final int button_profil_avatar=0x7f0b0039;
+        public static final int button_kontaktformular_senden=0x7f0b0028;
+        public static final int button_profil_avatar=0x7f0b003a;
         public static final int detailView_imageView=0x7f0b001c;
-        public static final int imageButton_profilansicht_mail=0x7f0b003c;
-        public static final int imageButton_profilansicht_sms=0x7f0b003e;
-        public static final int imageButton_profilansicht_tel=0x7f0b003d;
-        public static final int image_profilansicht_bild=0x7f0b0013;
-        public static final int kuBeschreibung=0x7f0b0052;
-        public static final int linearLayoutCheckedTextView=0x7f0b0049;
-        public static final int linlayoutBase=0x7f0b0048;
-        public static final int linlayoutButtons=0x7f0b004a;
+        public static final int imageButton_profilansicht_mail=0x7f0b003d;
+        public static final int imageButton_profilansicht_sms=0x7f0b003f;
+        public static final int imageButton_profilansicht_tel=0x7f0b003e;
+        public static final int imageView1=0x7f0b004a;
+        public static final int image_profilansicht_bild=0x7f0b0017;
+        public static final int kuBeschreibung=0x7f0b0054;
+        public static final int linearLayoutCheckedTextView=0x7f0b004b;
+        public static final int linlayoutBase=0x7f0b0049;
+        public static final int linlayoutButtons=0x7f0b004c;
         public static final int list=0x7f0b0000;
-        public static final int list_image=0x7f0b0050;
-        public static final int list_row_element=0x7f0b0058;
-        public static final int preis=0x7f0b0053;
+        public static final int list_image=0x7f0b0052;
+        public static final int list_row_element=0x7f0b005a;
+        public static final int preis=0x7f0b0055;
         public static final int previewImage=0x7f0b0010;
-        public static final int profil_imageView=0x7f0b0034;
-        public static final int progressBar2=0x7f0b0056;
-        public static final int radioBeides=0x7f0b0047;
+        public static final int profil_imageView=0x7f0b0035;
+        public static final int progressBar2=0x7f0b0058;
+        public static final int radioBeides=0x7f0b0048;
         public static final int radioBiete=0x7f0b000b;
         public static final int radioGroupBieteSuche=0x7f0b000a;
-        public static final int radioGroupDetailSuche=0x7f0b0046;
+        public static final int radioGroupDetailSuche=0x7f0b0047;
         public static final int radioSuche=0x7f0b000c;
-        public static final int relativeLayout2=0x7f0b0055;
+        public static final int relativeLayout2=0x7f0b0057;
         public static final int scrollView1=0x7f0b0003;
-        public static final int search=0x7f0b005d;
-        public static final int textView1=0x7f0b0057;
-        public static final int thumbnail=0x7f0b004f;
-        public static final int title=0x7f0b0051;
+        public static final int search=0x7f0b005f;
+        public static final int textView1=0x7f0b0059;
+        public static final int thumbnail=0x7f0b0051;
+        public static final int title=0x7f0b0053;
         public static final int tv_Login=0x7f0b0018;
-        public static final int tv_Registration_Anmeldung_User=0x7f0b0040;
-        public static final int tv_anmedestatus=0x7f0b002f;
-        public static final int tv_benutzerprofil=0x7f0b0035;
+        public static final int tv_Registration_Anmeldung_User=0x7f0b0041;
+        public static final int tv_anmedestatus=0x7f0b0030;
+        public static final int tv_benutzerprofil=0x7f0b0036;
         public static final int tv_changePasswort_PassNeu=0x7f0b0019;
         public static final int tv_changePasswort_PassWdh=0x7f0b001a;
         public static final int tv_detailview_beschreibung=0x7f0b0020;
         public static final int tv_detailview_kategorie=0x7f0b001e;
         public static final int tv_detailview_preis=0x7f0b001f;
         public static final int tv_detailview_titel=0x7f0b001d;
-        public static final int tv_kontakt=0x7f0b0023;
-        public static final int tv_kontakt_betreff=0x7f0b0025;
-        public static final int tv_kontakt_inserattitel=0x7f0b0024;
-        public static final int tv_kontakt_nachricht=0x7f0b0026;
-        public static final int tv_meinprofil_telnr=0x7f0b0038;
-        public static final int tv_profil_name=0x7f0b0037;
-        public static final int tv_profil_text=0x7f0b0036;
-        public static final int tv_profilansicht_name=0x7f0b003b;
-        public static final int tv_widget_kuBeschreibung=0x7f0b005a;
-        public static final int tv_widget_preis=0x7f0b005b;
-        public static final int tv_widget_title=0x7f0b0059;
-        public static final int widgetKonfigButton=0x7f0b004c;
-        public static final int widgetList=0x7f0b004e;
-        public static final int widgetSyncButton=0x7f0b004d;
+        public static final int tv_kontakt=0x7f0b0024;
+        public static final int tv_kontakt_betreff=0x7f0b0026;
+        public static final int tv_kontakt_inserattitel=0x7f0b0025;
+        public static final int tv_kontakt_nachricht=0x7f0b0027;
+        public static final int tv_meinprofil_telnr=0x7f0b0039;
+        public static final int tv_profil_name=0x7f0b0038;
+        public static final int tv_profil_text=0x7f0b0037;
+        public static final int tv_profilansicht_name=0x7f0b003c;
+        public static final int tv_widget_kuBeschreibung=0x7f0b005c;
+        public static final int tv_widget_preis=0x7f0b005d;
+        public static final int tv_widget_title=0x7f0b005b;
+        public static final int widgetKonfigButton=0x7f0b004e;
+        public static final int widgetList=0x7f0b0050;
+        public static final int widgetSyncButton=0x7f0b004f;
     }
     public static final class layout {
         public static final int activity_angebote=0x7f030000;
@@ -237,6 +261,7 @@ public final class R {
         public static final int in_k_rze_bekommen_sie_eine_email_mit_ihren_zugangsdaten=0x7f080032;
         public static final int in_kategorie=0x7f080037;
         public static final int info=0x7f08000d;
+        public static final int inserat_melden=0x7f08006c;
         public static final int inserat_wurde_gel_scht=0x7f08006b;
         public static final int join_the_community_=0x7f080030;
         public static final int k1=0x7f08002a;
@@ -301,11 +326,15 @@ public final class R {
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
+
         
 
         Base application theme for API 11+. This theme completely replaces
@@ -321,11 +350,22 @@ public final class R {
          */
         public static final int AppBaseTheme=0x7f090000;
         /**  Application theme. 
+       Costomize Action Bar: Start
+ 
          */
         public static final int AppTheme=0x7f090001;
-        public static final int DHBW_Button=0x7f090002;
-        public static final int DHBW_Inputfields=0x7f090004;
-        public static final int DHBW_Textfields=0x7f090003;
+        /** 
+           Costomize Action Bar: Finish
+           <item name="android:background">@drawable/shape</item>
+
+    
+         */
+        public static final int DHBW_Button=0x7f090004;
+        public static final int DHBW_Inputfields=0x7f090007;
+        public static final int DHBW_Textfields=0x7f090006;
+        public static final int DHBW_icon_Button=0x7f090005;
+        public static final int MyActionBar=0x7f090002;
+        public static final int Theme_MyAppTheme_ActionBar_TitleTextStyle=0x7f090003;
     }
     public static final class xml {
         public static final int bbwidget_info=0x7f040000;

@@ -5,15 +5,10 @@
     android:orientation="vertical" >
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-    <ImageView
-        android:id="@+id/image_profilansicht_bild"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:src="@drawable/bb_logo" />
+        android:layout_gravity="right"
+        android:layout_marginBottom="70dp" >
 
     <TextView
         android:id="@+id/tv_anmedestatus"
@@ -27,69 +22,88 @@
 
 </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginBottom="50dp"
+        android:background="@color/DHBW_gray_light"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
         <LinearLayout
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
             android:weightSum="2" >
 
             <Button
                 android:id="@+id/ButtonAngebote"
-                style="@style/DHBW_Button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
+                style="@style/DHBW_icon_Button"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
+                android:background="@drawable/gradient_dhbw_icon_button"
+                android:drawableTop="@drawable/icon_angebote"
                 android:text="@string/angebote" />
 
             <Button
                 android:id="@+id/ButtonGesuche"
-                style="@style/DHBW_Button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/DHBW_icon_Button"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="10dp"
                 android:layout_weight="1"
-                android:text="@string/gesuche"></Button>
+                android:drawableTop="@drawable/icon_gesuche"
+                android:text="@string/gesuche" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="5dp"
-            
             android:gravity="center_horizontal"
             android:orientation="horizontal"
             android:weightSum="2" >
 
             <Button
                 android:id="@+id/ButtonDetailSuche"
-                style="@style/DHBW_Button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
+                style="@style/DHBW_icon_Button"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:text="@string/_detail_nsuche"></Button>
+                android:drawableTop="@drawable/icon_detailsuche"
+                android:text="@string/_detail_nsuche" />
 
             <Button
                 android:id="@+id/ButtonBenutzerbereich"
-                style="@style/DHBW_Button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                style="@style/DHBW_icon_Button"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
                 android:layout_weight="1"
-                android:text="@string/benutzer_nbereich" >
-</Button>
+                android:drawableTop="@drawable/icon_benutzerbereich"
+                android:text="@string/benutzer_nbereich" />
+
         </LinearLayout>
+
+    </LinearLayout>
     
     <Button
         android:id="@+id/button_LoginScreen_Anmeldung"
+        style="@style/DHBW_Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
