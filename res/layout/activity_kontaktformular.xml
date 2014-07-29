@@ -9,26 +9,31 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp" >
+        android:layout_height="wrap_content" >
 
-        <ImageView
-            android:id="@+id/detailView_imageView"
-            android:layout_width="115dp"
-            android:layout_height="115dp"
-            android:src="@drawable/bb_logo" />
-
-        <TextView
-            android:id="@+id/tv_kontakt"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="32dp"
-            android:layout_gravity="bottom"
-            android:background="@color/DHBW_gray_light"
-            android:gravity="left|center"
-            android:paddingLeft="10dp"
-            android:text="@string/kontaktformular"
-            android:textColor="@color/DHBW_gray_dark"
-            android:textSize="20sp" />
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_kontaktformular" />
+
+            <TextView
+                android:id="@+id/tv_kontakt"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_gravity="bottom"
+                android:background="@color/DHBW_gray_light"
+                android:gravity="left|center"
+                android:paddingLeft="10dp"
+                android:text="@string/kontaktformular"
+                android:textColor="@color/DHBW_gray_dark"
+                android:textSize="20sp" />
+        </LinearLayout>
 
     </LinearLayout>
 

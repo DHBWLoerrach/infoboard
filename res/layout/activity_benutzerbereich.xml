@@ -17,7 +17,8 @@
         android:layout_marginBottom="50dp"
         android:layout_marginTop="100dp"
         android:background="@color/DHBW_gray_light"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:padding="10dp" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -65,7 +66,7 @@
             <Button
                 android:id="@+id/ButtonKontoVerwaltung"
                 style="@style/DHBW_icon_Button"
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="5dp"
                 android:layout_marginRight="10dp"
