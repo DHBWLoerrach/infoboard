@@ -5,10 +5,14 @@
     android:orientation="vertical" >
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginBottom="50dp"
+        android:layout_gravity="center"
         android:layout_marginTop="100dp"
         android:background="@color/DHBW_gray_light"
         android:gravity="right"
@@ -79,6 +83,62 @@
                 android:drawableTop="@drawable/icon_benutzerbereich"
                 android:text="leer" />
         </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_gravity="bottom"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:weightSum="4" >
+
+        <Button
+            android:id="@+id/ImageButton01"
+            style="@style/DHBW_icon_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon_angebote_white"
+            android:src="@drawable/bb_telicon"
+            android:text="Suche/Biete" />
+
+        <Button
+            android:id="@+id/ImageButton02"
+            style="@style/DHBW_icon_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon_detailsuche_white"
+            android:src="@drawable/bb_telicon"
+            android:text="Detail-Suche" />
+
+        <Button
+            android:id="@+id/ImageButton03"
+            style="@style/DHBW_icon_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon_home_white"
+            android:src="@drawable/bb_telicon"
+            android:text="Home" />
+
+        <Button
+            android:id="@+id/ImageButton04"
+            style="@style/DHBW_icon_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon_einstellungen_white"
+            android:src="@drawable/bb_telicon"
+            android:text="Benutzer" />
     </LinearLayout>
 
 </LinearLayout>

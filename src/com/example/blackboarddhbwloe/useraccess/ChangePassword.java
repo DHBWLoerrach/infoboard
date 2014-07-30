@@ -45,7 +45,7 @@ public class ChangePassword extends Activity {
 				String newPSW = et_newPSW.getText().toString();
 				String wdhPSW = et_wdhPSW.getText().toString();
 
-				if (newPSW.equals(wdhPSW)) {
+				if (newPSW.equals(wdhPSW)&&(newPSW.equals("")==false)) {
 					DB.addValueToDB("UPDATE `BBDB`.`tblUser` SET `psw`='"
 							+ newPSW + "', `initial`='1' WHERE `id`='"
 							+ MainActivity.USERID + "';");

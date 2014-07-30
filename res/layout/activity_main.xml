@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLayout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/bb_background1"
@@ -10,24 +11,22 @@
         android:layout_gravity="right"
         android:layout_marginBottom="70dp" >
 
-    <TextView
-        android:id="@+id/tv_anmedestatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:paddingRight="8dp"
-        android:text="@string/sie_sind_nicht_angemeldet_"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/DHBW_gray_light"
-        android:textSize="14sp" />
-
-</LinearLayout>
+        <TextView
+            android:id="@+id/tv_anmedestatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingRight="8dp"
+            android:text="@string/sie_sind_nicht_angemeldet_"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/DHBW_gray_light"
+            android:textSize="14sp" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="50dp"
         android:background="@color/DHBW_gray_light"
         android:orientation="vertical"
         android:padding="10dp" >
@@ -97,18 +96,71 @@
                 android:layout_weight="1"
                 android:drawableTop="@drawable/icon_benutzerbereich"
                 android:text="@string/benutzer_nbereich" />
-
         </LinearLayout>
-
     </LinearLayout>
-    
+
     <Button
         android:id="@+id/button_LoginScreen_Anmeldung"
         style="@style/DHBW_Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:text="@string/anmeldung" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_gravity="bottom"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:weightSum="4" >
+
+        <Button
+            android:id="@+id/ImageButton01"
+            style="@style/DHBW_icon_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon_angebote_white"
+            android:src="@drawable/bb_telicon"
+            android:text="Suche/Biete" />
+
+        <Button
+            android:id="@+id/ImageButton02"
+            style="@style/DHBW_icon_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon_detailsuche_white"
+            android:src="@drawable/bb_telicon"
+            android:text="Detail-Suche" />
+
+        <Button
+            android:id="@+id/ImageButton03"
+            style="@style/DHBW_icon_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon_home_white"
+            android:src="@drawable/bb_telicon"
+            android:text="Home" />
+
+        <Button
+            android:id="@+id/ImageButton04"
+            style="@style/DHBW_icon_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon_einstellungen_white"
+            android:src="@drawable/bb_telicon"
+            android:text="Benutzer" />
+    </LinearLayout>
 
 </LinearLayout>

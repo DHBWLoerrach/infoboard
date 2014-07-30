@@ -86,6 +86,67 @@ public class BenutzerBereich extends Activity {
 
 			}
 		});
+		
+		
+//Funktion iconBar: Farbschema anpassen
+		
+		
+		//Funktion iconBar: Farbschema anpassen
+		
+		
+//		defaultcolor für das icon wenn es angeklickt wurde
+		Button buttonStatusSelected = (Button) findViewById(R.id.ImageButton04);
+		buttonStatusSelected.setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient_dhbw_icon_bar_selected));
+		
+		
+		
+//		Button buttonBar = (Button) findViewById(R.id.ImageButton01);
+//		buttonBar.setOnClickListener(new View.OnClickListener() {
+//
+//			@Override
+//			public void onClick(View v) {
+//				Intent intentAngebote = new Intent(
+//						"com.example.blackboarddhbwloe.INSERATLISTE");
+//
+//				startActivity(intentAngebote);
+//				
+//			}
+//		});	
+		
+		Button buttonSucheBar = (Button) findViewById(R.id.ImageButton02);
+		buttonSucheBar.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intentAngebote = new Intent(
+						"com.example.blackboarddhbwloe.DETAILSUCHE");
+
+				startActivity(intentAngebote);
+				
+			}
+		});		
+		
+		Button buttonBenutzerbereichBar = (Button) findViewById(R.id.ImageButton03);
+		buttonBenutzerbereichBar.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// Wenn Benutzer angemeldet
+				if (MainActivity.isAnmeldestatus() == true) {
+					// Zeige die Angebote
+					Intent intentAngebote = new Intent(
+							"com.example.blackboarddhbwloe.main");
+					startActivity(intentAngebote);
+					finish();
+				} else {
+					// Weiterleitung zum Login
+					Intent intentLogin = new Intent(
+							"com.example.blackboarddhbwloe.LOGINSCREEN");
+					intentLogin.putExtra("activity", "fromBenutzerbereich");
+					startActivity(intentLogin);
+				}
+			}
+		});
+
 
 	}
 
