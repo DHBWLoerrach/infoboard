@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +18,9 @@ import com.example.blackboarddhbwloe.tools.DB;
 
 public class LoginScreen extends Activity {
 	
+	
+	public static boolean verbindungHergestellt = true; 
+	
 	public void onBackPressed() {
 		finish();
 		super.onBackPressed();
@@ -26,6 +30,12 @@ public class LoginScreen extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_loginscreen);
+		
+		// StrictMode ist dazu da damit die Policy connections nach aussen
+		// zulaesst, MT
+		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+				.permitNetwork().build();
+		StrictMode.setThreadPolicy(policy);
 
 		getActionBar().setTitle(R.string.anmeldung);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
@@ -39,7 +49,6 @@ public class LoginScreen extends Activity {
 				TextView user = (TextView) findViewById(R.id.Anmeldung_LoginScreen_Username);
 				TextView pass = (TextView) findViewById(R.id.Anmeldung_LoginScreen_Pass);
 				try {
-
 					ResultSet resultset = DB
 							.getRSFromDB("Select * From tblUser Where username = '"
 									+ user.getText()
@@ -73,12 +82,12 @@ public class LoginScreen extends Activity {
 							startActivity(intentChangePasswort);
 						} else {
 							
-							// Wenn Benutzer vorher auf den Benutzerbereich
-							// wollte starte die entsprechende Activity
-							if (activityLast.equals("fromBenutzerbereich")) {
+							// Wenn Benutzer vorher vom loadingScreen kam
+							// starte die entsprechende Activity
+							if (activityLast.equals("splash")) {
 
 								Intent intent = new Intent(
-										"com.example.blackboarddhbwloe.BENUTZERBEREICH");
+										"com.example.blackboarddhbwloe.main");
 								startActivity(intent);
 
 								// beende die activity loginScreen (kein zurück

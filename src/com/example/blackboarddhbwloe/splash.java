@@ -21,7 +21,8 @@ public class splash extends Activity{
 				spinner = (ProgressBar)findViewById(R.id.progressBar2);
 				spinner.setVisibility(View.VISIBLE);
 				DB.setConnection();
-				Intent menuIntent = new Intent("com.example.blackboarddhbwloe.main");
+				Intent menuIntent = new Intent("com.example.blackboarddhbwloe.LOGINSCREEN");
+				menuIntent.putExtra("activity", "splash");
 				startActivity(menuIntent);
 //				spinner.setProgress(100);
 //				spinner.setVisibility(View.GONE);

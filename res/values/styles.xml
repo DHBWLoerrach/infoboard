@@ -52,8 +52,6 @@
         <item name="android:background">@drawable/gradient_dhbw_icon_button</item>
         <item name="android:cropToPadding">false</item>
        <item name="android:padding">7dip</item>
-
-        
     </style>
     
         <style name="DHBW_icon_bar" parent="AppBaseTheme">

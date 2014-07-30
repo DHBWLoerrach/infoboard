@@ -21,12 +21,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.blackboarddhbwloe.tools.DB;
+import com.example.blackboarddhbwloe.useraccess.LoginScreen;
 
 public class MainActivity extends Activity {
 
 	static final int uniqueId = 34235;
 	String altesAbos = "";
-	public static boolean verbindungHergestellt = true; 
+	
 
 	private static boolean anmeldestatus = false;
 	public static String USERNAME = "";
@@ -58,17 +59,13 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		if(verbindungHergestellt==false)
+		if(LoginScreen.verbindungHergestellt==false)
 		{
 			datenverbindungFehlgeschlagen();
 		}
 		
 		//System.out.println("Connection erfolgreich: "+verbindungHergestellt);
-		// StrictMode ist dazu da damit die Policy connections nach aussen
-		// zulaesst, MT
-		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
-				.permitNetwork().build();
-		StrictMode.setThreadPolicy(policy);
+
 
 		// Starte den Notification Service
 
@@ -155,18 +152,6 @@ public class MainActivity extends Activity {
 			}
 		});
 
-		Button buttonAnmeldung = (Button) findViewById(R.id.button_LoginScreen_Anmeldung);
-		buttonAnmeldung.setOnClickListener(new View.OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				Intent intentAngebote = new Intent(
-						"com.example.blackboarddhbwloe.LOGINSCREEN");
-				intentAngebote.putExtra("activity", "fromMain");
-				startActivity(intentAngebote);
-
-			}
-		});
 		
 		//Funktion iconBar: Farbschema anpassen
 		

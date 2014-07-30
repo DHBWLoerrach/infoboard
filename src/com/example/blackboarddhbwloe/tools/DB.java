@@ -10,6 +10,7 @@ import java.sql.Statement;
 import android.util.Log;
 
 import com.example.blackboarddhbwloe.MainActivity;
+import com.example.blackboarddhbwloe.useraccess.LoginScreen;
 
 public class DB {
 
@@ -31,9 +32,10 @@ static public void setConnection (){
 	    double ii = System.currentTimeMillis();
 	    double iii = ii-i;
 	    System.out.println("Database connection success in : "+iii);
-	    MainActivity.verbindungHergestellt  = true;
+	    LoginScreen.verbindungHergestellt = true;
+	    
 	} catch (Exception e) {
-		MainActivity.verbindungHergestellt  = false;
+		LoginScreen.verbindungHergestellt  = false;
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
@@ -50,10 +52,11 @@ static public void closeConnection(){
 static public ResultSet getRSFromDB(String sqlStatement) {
 	
 	    try {
-	        
+	        System.out.println("DHBW-HIER1");
 	        Statement st = con.createStatement();
+	        System.out.println("DHBW-HIER1,5");
 	        ResultSet rs = st.executeQuery(sqlStatement);
-	        
+	        System.out.println("DHBW-HIER2");
 	        return rs;
 	        
 	    }
@@ -67,7 +70,7 @@ static public ResultSet getRSFromDB(String sqlStatement) {
 
 	}
 
-static public void addValueToDB(String sqlStatement) {
+public static void addValueToDB(String sqlStatement) {
 	
     try {
         Statement st = con.createStatement();
