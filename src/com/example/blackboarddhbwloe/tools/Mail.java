@@ -20,6 +20,7 @@ public class Mail {
 
 		
 		Thread t = new Thread() {
+			@Override
 			public void run() {
 				final String usrName = "bbdhbwloe@gmail.com";
 				final String password = "Black12Board";
@@ -34,6 +35,7 @@ public class Mail {
 
 				Session session = Session.getInstance(props,
 						new javax.mail.Authenticator() {
+							@Override
 							protected PasswordAuthentication getPasswordAuthentication() {
 								return new PasswordAuthentication(usrName,
 										password);

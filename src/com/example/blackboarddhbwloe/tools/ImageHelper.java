@@ -13,6 +13,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.provider.MediaStore.MediaColumns;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -59,6 +60,7 @@ public class ImageHelper {
 
 		builder.setTitle(R.string.wahle_bildquelle);
 		builder.setAdapter(adapter, new DialogInterface.OnClickListener() {
+			@Override
 			public void onClick(DialogInterface dialog, int item) {
 				if (item == 0) {
 					// von Kamera
@@ -134,7 +136,7 @@ public class ImageHelper {
 
 		System.out.println(tag + "  getRealPathFromUri started");
 
-		String[] proj = { MediaStore.Images.Media.DATA };
+		String[] proj = { MediaColumns.DATA };
 		Cursor cursor = AnlegenActivity.getContentResolver().query(contentUri,
 				proj, null, null, null);
 
@@ -142,7 +144,7 @@ public class ImageHelper {
 			return null;
 
 		int column_index_path = cursor
-				.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+				.getColumnIndexOrThrow(MediaColumns.DATA);
 
 		cursor.moveToFirst();
 

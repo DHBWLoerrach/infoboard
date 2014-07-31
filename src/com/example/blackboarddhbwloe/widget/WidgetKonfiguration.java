@@ -1,5 +1,7 @@
 package com.example.blackboarddhbwloe.widget;
 
+import com.example.blackboarddhbwloe.R;
+
 import android.app.Activity;
 import android.appwidget.AppWidgetManager;
 import android.content.Intent;
@@ -11,8 +13,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-
-import com.example.blackboarddhbwloe.R;
 
 public class WidgetKonfiguration extends Activity {
 

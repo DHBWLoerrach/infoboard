@@ -33,6 +33,7 @@ public class BBWidgetProvider extends AppWidgetProvider {
 	 * 		Die Methode wird automatisch bei Anlegen jedes Widgets ausgeführt.</b>
 	 */
 	
+	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
 			int[] appWidgetIDs) {
 
@@ -110,6 +111,7 @@ public class BBWidgetProvider extends AppWidgetProvider {
 	 * 		Durch super.onReceive werden generische Aufrufe, z.B. der onUpdate-Methode implementiert.</b>
 	 */
 
+	@Override
 	public void onReceive(Context context, Intent intent) {
 
 		super.onReceive(context, intent);

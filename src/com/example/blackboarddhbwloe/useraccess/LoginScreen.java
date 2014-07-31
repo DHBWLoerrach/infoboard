@@ -21,6 +21,7 @@ public class LoginScreen extends Activity {
 	
 	public static boolean verbindungHergestellt = true; 
 	
+	@Override
 	public void onBackPressed() {
 		finish();
 		super.onBackPressed();
@@ -150,6 +151,7 @@ public class LoginScreen extends Activity {
 
 	}
 
+	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home:

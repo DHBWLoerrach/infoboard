@@ -52,11 +52,8 @@ static public void closeConnection(){
 static public ResultSet getRSFromDB(String sqlStatement) {
 	
 	    try {
-	        System.out.println("DHBW-HIER1");
 	        Statement st = con.createStatement();
-	        System.out.println("DHBW-HIER1,5");
 	        ResultSet rs = st.executeQuery(sqlStatement);
-	        System.out.println("DHBW-HIER2");
 	        return rs;
 	        
 	    }

@@ -43,6 +43,7 @@ public class MeinBenutzerProfil extends Activity {
 		super.onBackPressed();
 	}
 
+	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_meinbenutzerprofil);
@@ -134,18 +135,19 @@ public class MeinBenutzerProfil extends Activity {
 		// imageView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
 		// LayoutParams.MATCH_PARENT));
 
-		mSplashDialog.requestWindowFeature((int) Window.FEATURE_NO_TITLE);
+		mSplashDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		mSplashDialog.setContentView(imageView);
 		mSplashDialog.getWindow().setFlags(LayoutParams.FLAG_FULLSCREEN,
 				LayoutParams.FLAG_FULLSCREEN);
-		mSplashDialog.getWindow().setLayout(LayoutParams.MATCH_PARENT,
-				LayoutParams.MATCH_PARENT);
+		mSplashDialog.getWindow().setLayout(android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+				android.view.ViewGroup.LayoutParams.MATCH_PARENT);
 		mSplashDialog.setCancelable(true);
 
 		mSplashDialog.show();
 		myFtpClient.ftpDisconnect();
 	}
 
+	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home:
@@ -171,6 +173,7 @@ public class MeinBenutzerProfil extends Activity {
 
 		}
 
+		@Override
 		protected void onPostExecute(Drawable result) {
 
 			if (result != null) {
@@ -225,6 +228,7 @@ public class MeinBenutzerProfil extends Activity {
 		}
 	
 
+	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		Log.d(iHelper.tag, "onActivityResult started");
 		if (resultCode != Activity.RESULT_OK) {

@@ -29,6 +29,7 @@ public class AnzeigeSchalten extends Activity {
 	final Context context = this;
 	ImageHelper iHelper;
 
+	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_anzeigeschalten);
@@ -49,6 +50,7 @@ public class AnzeigeSchalten extends Activity {
 
 	}
 	
+	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home:
@@ -183,6 +185,7 @@ public class AnzeigeSchalten extends Activity {
 		}
 	}
 
+	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		Log.d(iHelper.tag, "onActivityResult started");
 		if (resultCode != Activity.RESULT_OK) {

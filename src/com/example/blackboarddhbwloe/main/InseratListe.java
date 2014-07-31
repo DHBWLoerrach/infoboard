@@ -139,6 +139,7 @@ public class InseratListe extends Activity {
 		return true;
 	}
 	
+	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home:
@@ -152,6 +153,7 @@ public class InseratListe extends Activity {
 		}
 	}
 	
+	@Override
 	protected void onNewIntent(Intent intent){
 		Log.d("newIntent", "started");
 		if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
@@ -267,6 +269,7 @@ public class InseratListe extends Activity {
 
 		}
 		
+		@Override
 		protected void onPostExecute(Drawable result){
 			Log.d("DrawableList Size: ", ""+drawableList.size());
 			if (result != null){

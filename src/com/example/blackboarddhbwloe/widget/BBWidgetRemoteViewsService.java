@@ -26,6 +26,7 @@ public class BBWidgetRemoteViewsService extends RemoteViewsService {
 	 * <h1> Beschreibung </h1>
 	 * <b>  Die onGetViewFactory-Methode wird automatisch bei Start des Service aufgerufen und ruft die RemoteViewsFactory auf.</b>
 	 */
+	@Override
 	public RemoteViewsFactory onGetViewFactory(Intent intent) {
 		return new BBWidgetRemoteViewsFactory(this.getApplicationContext(),
 				intent);
@@ -70,6 +71,7 @@ class BBWidgetRemoteViewsFactory implements
 	 * <b>  Die Methode getViewAt generiert das Listenelement anhand der Position in der Liste.</b>
 	 * @return RemoteViews
 	 */
+	@Override
 	public RemoteViews getViewAt(int position) {
 
 		String subString;

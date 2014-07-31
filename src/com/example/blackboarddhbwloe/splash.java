@@ -15,6 +15,7 @@ public class splash extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.splash);
 		Thread logoTimer = new Thread(){
+		@Override
 		public void run(){
 			try {
 				

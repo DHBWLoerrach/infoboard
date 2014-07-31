@@ -138,6 +138,7 @@ public class ProfilAnsicht extends Activity {
 						R.string.m_chten_sie_den_besitzer_des_inserats_anrufen_)
 				.setPositiveButton(android.R.string.yes,
 						new DialogInterface.OnClickListener() {
+							@Override
 							public void onClick(DialogInterface dialog,
 									int which) {
 								String uri = "tel:" + telnr;
@@ -150,6 +151,7 @@ public class ProfilAnsicht extends Activity {
 						})
 				.setNegativeButton(R.string.abbrechen,
 						new DialogInterface.OnClickListener() {
+							@Override
 							public void onClick(DialogInterface dialog,
 									int which) {
 								// do nothing
@@ -171,18 +173,19 @@ public class ProfilAnsicht extends Activity {
 		// imageView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
 		// LayoutParams.MATCH_PARENT));
 
-		mSplashDialog.requestWindowFeature((int) Window.FEATURE_NO_TITLE);
+		mSplashDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		mSplashDialog.setContentView(imageView);
 		mSplashDialog.getWindow().setFlags(LayoutParams.FLAG_FULLSCREEN,
 				LayoutParams.FLAG_FULLSCREEN);
-		mSplashDialog.getWindow().setLayout(LayoutParams.MATCH_PARENT,
-				LayoutParams.MATCH_PARENT);
+		mSplashDialog.getWindow().setLayout(android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+				android.view.ViewGroup.LayoutParams.MATCH_PARENT);
 		mSplashDialog.setCancelable(true);
 
 		mSplashDialog.show();
 		myFtpClient.ftpDisconnect();
 	}
 
+	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home:
@@ -208,6 +211,7 @@ public class ProfilAnsicht extends Activity {
 
 		}
 
+		@Override
 		protected void onPostExecute(Drawable result) {
 
 			if (result != null) {

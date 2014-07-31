@@ -11,7 +11,8 @@ import android.view.View;
 	        private final GestureDetector gestureDetector = new GestureDetector(
 	                        new GestureListener());
 	 
-	        public boolean onTouch(final View v, final MotionEvent event) {
+	        @Override
+			public boolean onTouch(final View v, final MotionEvent event) {
 	                return gestureDetector.onTouchEvent(event);
 	        }
 	 

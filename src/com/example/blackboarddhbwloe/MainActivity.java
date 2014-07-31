@@ -13,7 +13,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
 import android.view.View;
@@ -27,6 +26,7 @@ public class MainActivity extends Activity {
 
 	static final int uniqueId = 34235;
 	String altesAbos = "";
+	static boolean notificationErzeugt = false;
 	
 
 	private static boolean anmeldestatus = false;
@@ -69,7 +69,12 @@ public class MainActivity extends Activity {
 
 		// Starte den Notification Service
 
-		starteNotificationListener();
+		//Prüfe ob der Service bereits gestartet wurde. -Verhindert, dass beim erneuten Aufruf der MainActivity der listener ein zweites Mal gestartet wird.
+		if (notificationErzeugt==false)
+		{
+			starteNotificationListener();
+		}
+		
 
 		TextView tvUsername = (TextView) findViewById(R.id.tv_anmedestatus);
 		if (!USERNAME.equals("")) {
@@ -214,7 +219,11 @@ public class MainActivity extends Activity {
 	}
 
 	private void starteNotificationListener() {
+		
+				
 		Thread t = new Thread(new Runnable() {
+			
+			@Override
 			public void run() {
 				int s = 1;
 				boolean notificationErzeugen = true;
@@ -224,6 +233,7 @@ public class MainActivity extends Activity {
 					// Wenn user nicht angemeldet ist mache nichts
 					while (MainActivity.USERID == "") {
 						try {
+							
 							Thread.sleep(3000);
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
@@ -233,7 +243,7 @@ public class MainActivity extends Activity {
 					// Hat sich der User angemeldet beginne mit dem
 					// notificationListener
 					while (MainActivity.USERID != "") {
-
+						
 						// Durchsuche die Angebote nach abonierten Kategorien
 						// und hole davon die Angebote mit
 						// erstalldatum > letzteAktualisierungsabfrage des User
@@ -288,12 +298,15 @@ public class MainActivity extends Activity {
 						// Das aktuelisierungsdatum wird beim Aufruf der
 						// activity angebote neu gesetzt
 
-						try {
-							Thread.sleep(30000);
+						try {//der Listener prüft alle 60sec nach neuen Einträgen
+							Thread.sleep(60000);
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
+						
+						notificationErzeugt=true;
+						System.out.println("NotificationService hat nach neuen Einträgen gesucht.");
 					}
 				}
 			}
@@ -301,7 +314,7 @@ public class MainActivity extends Activity {
 		});
 
 		t.start();
-
+				
 	}
 
 	private void erzeugeNotification(String notTitle, String notText) {
@@ -350,6 +363,7 @@ public class MainActivity extends Activity {
 			.setMessage(R.string.was_m_chten_sie_tun_)
 			.setPositiveButton("Erneut versuchen",
 					new DialogInterface.OnClickListener() {
+						@Override
 						public void onClick(DialogInterface dialog,
 								int which) {
 							Intent i = getBaseContext().getPackageManager()
@@ -361,11 +375,12 @@ public class MainActivity extends Activity {
 					})
 			.setNegativeButton(R.string.beenden,
 					new DialogInterface.OnClickListener() {
+						@Override
 						public void onClick(DialogInterface dialog,
 								int which) {
 							System.exit(0);
 						}
 					}).show();
 	}
-
+	
 }

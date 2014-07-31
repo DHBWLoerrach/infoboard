@@ -333,6 +333,7 @@ public class DetailView extends Activity implements OnTouchListener {
 				.setMessage(R.string.m_chten_sie_ihr_inserat_wirklich_loeschen_)
 				.setPositiveButton(android.R.string.yes,
 						new DialogInterface.OnClickListener() {
+							@Override
 							public void onClick(DialogInterface dialog,
 									int which) {
 
@@ -362,6 +363,7 @@ public class DetailView extends Activity implements OnTouchListener {
 						})
 				.setNegativeButton(R.string.abbrechen,
 						new DialogInterface.OnClickListener() {
+							@Override
 							public void onClick(DialogInterface dialog,
 									int which) {
 								// do nothing
@@ -376,6 +378,7 @@ public class DetailView extends Activity implements OnTouchListener {
 				.setMessage("Soll der Beitrag gemeldet werden?")
 				.setPositiveButton(android.R.string.yes,
 						new DialogInterface.OnClickListener() {
+							@Override
 							public void onClick(DialogInterface dialog,
 									int which) {
 								
@@ -436,6 +439,7 @@ public class DetailView extends Activity implements OnTouchListener {
 						})
 				.setNegativeButton(R.string.abbrechen,
 						new DialogInterface.OnClickListener() {
+							@Override
 							public void onClick(DialogInterface dialog,
 									int which) {
 								// do nothing
@@ -460,18 +464,19 @@ public class DetailView extends Activity implements OnTouchListener {
 		// imageView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
 		// LayoutParams.MATCH_PARENT));
 
-		mSplashDialog.requestWindowFeature((int) Window.FEATURE_NO_TITLE);
+		mSplashDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		mSplashDialog.setContentView(imageView);
 		mSplashDialog.getWindow().setFlags(LayoutParams.FLAG_FULLSCREEN,
 				LayoutParams.FLAG_FULLSCREEN);
-		mSplashDialog.getWindow().setLayout(LayoutParams.MATCH_PARENT,
-				LayoutParams.MATCH_PARENT);
+		mSplashDialog.getWindow().setLayout(android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+				android.view.ViewGroup.LayoutParams.MATCH_PARENT);
 		mSplashDialog.setCancelable(true);
 
 		mSplashDialog.show();
 		myFtpClient.ftpDisconnect();
 	}
 
+	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home:
@@ -503,6 +508,7 @@ public class DetailView extends Activity implements OnTouchListener {
 
 		}
 
+		@Override
 		protected void onPostExecute(Drawable result) {
 
 			if (result != null) {

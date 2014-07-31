@@ -31,14 +31,17 @@ public class DatenAufbereiter extends BaseAdapter {
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	}
 
+	@Override
 	public int getCount() {
 		return data.size();
 	}
 
+	@Override
 	public Object getItem(int position) {
 		return position;
 	}
 
+	@Override
 	public long getItemId(int position) {
 		return position;
 	}
@@ -49,6 +52,7 @@ public class DatenAufbereiter extends BaseAdapter {
 	 * Hashmap mit dem Eintrag "neu" (fuer neue Angebote) ausgelesen werden
 	 * muss. Beim Suchfilter ohne "neu"
 	 */
+	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View vi = convertView;
 
