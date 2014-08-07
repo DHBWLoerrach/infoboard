@@ -2,6 +2,7 @@ package com.example.blackboarddhbwloe.tools;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -10,6 +11,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
+import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -39,6 +42,8 @@ public class ImageHelper {
 
 	public Uri mImageCaptureUri;
 	public String sourcePath;
+	
+	public Matrix matrix;
 
 	public Bitmap previewImage;
 
@@ -152,6 +157,31 @@ public class ImageHelper {
 
 		return cursor.getString(column_index_path);
 	}
+	
+	private void rotateImage() {
+		ExifInterface exif;
+		try {
+			exif = new ExifInterface(sourcePath);
+		
+		int rotation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
+		
+		int rotationDegree = exifToDegrees(rotation);
+		Log.d("DHBW InfoBoard ", "Rotation in Degree: " +rotationDegree);
+		
+		matrix = new Matrix();
+		if (rotation != 0f) {matrix.preRotate(rotationDegree);}
+		
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private static int exifToDegrees(int exifOrientation) {        
+	    if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_90) { return 90; } 
+	    else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_180) {  return 180; } 
+	    else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_270) {  return 270; }            
+	    return 0;    
+	 }
 
 	public void imageScaling() {
 
@@ -169,6 +199,8 @@ public class ImageHelper {
 		
 		optList.inJustDecodeBounds = false;
 		optDetail.inJustDecodeBounds = false;
+		
+		rotateImage();
 
 		try {
 
@@ -215,6 +247,8 @@ public class ImageHelper {
 			FileInputStream inList = new FileInputStream(sourcePath);
 			imageList = BitmapFactory.decodeStream(inList, null, optList);
 			inList.close();
+			imageList = Bitmap.createBitmap(imageList, 0, 0, imageList.getWidth(), imageList.getHeight(), matrix, false);
+			
 			
 			if (height_scaleDetail > width_scaleDetail) {
 
@@ -229,7 +263,8 @@ public class ImageHelper {
 			FileInputStream inDetail = new FileInputStream(sourcePath);		
 			imageDetail = BitmapFactory.decodeStream(inDetail, null, optDetail);
 			inDetail.close();
-			
+			imageDetail = Bitmap.createBitmap(imageDetail, 0, 0, imageDetail.getWidth(), imageDetail.getHeight(), matrix, false);
+		
 			previewImage = imageDetail;
 			
 			in.close();
