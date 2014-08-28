@@ -1,10 +1,37 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_Support"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/action_settings"/>
+        android:title="Hilfe und Support"/>
+    
+    <item
+        android:id="@+id/action_Feedback"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Feedback senden"/>
+    
+    <item
+        android:id="@+id/action_Datenschutz"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Datenschutz"/>
+    
+        <item
+        android:id="@+id/action_Beenden"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Beenden"/>
+    
+    <item
+        android:id="@+id/action_refresh"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:icon="@drawable/icon_benutzerbereich"
+        android:title="Refresh"/>
+    
+
     
 
 </menu>

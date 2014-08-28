@@ -3,13 +3,13 @@
 
     <string name="app_name">Bulletin-Board</string>
     <string name="action_settings">Settings</string>   
-    <string name="label_hauptmenue">Hauptmenü</string>
+    <string name="label_hauptmenue">DHBW/Dashboard</string>
     <string name="label_angebote">Angebote</string>
     <string name="label_gesuche">Gesuche</string>
     <string name="label_anzeigeschalten">Anzeige schalten</string>
     <string name="label_suche">Detail-Suche</string>
     <string name="label_login">Anmeldung</string>
-    <string name="label_benutzerbereich">Benutzerbereich</string>
+    <string name="label_benutzerbereich">Benutzer-Bereich</string>
     <string name="neue_anzeige">Neue Anzeige</string>
     <string name="kategorie">Kategorie</string>
     <string name="biete">Biete</string>
@@ -73,7 +73,7 @@
     <string name="keine_verbindung_zum_internet">Keine Verbindung zum Internet</string>
     <string name="was_m_chten_sie_tun_">Was möchtest du tun?</string>
     <string name="beenden">Beenden</string>
-    <string name="benutzer_bereich">Benutzer-Bereich</string>
+    <string name="benutzer_bereich">Benutzerbereich</string>
     <string name="eintrag_loeschen">Eintrag löschen</string>
     <string name="m_chten_sie_ihr_inserat_wirklich_loeschen_">Möchtest du dein Inserat wirklich löschen?</string>
     <string name="abbrechen">Abbrechen</string>
@@ -94,7 +94,7 @@
     <string name="upload_abgeschlossen_">Upload abgeschlossen.</string>
     <string name="kontakt_formular">Kontakt Formular</string>
     <string name="nachricht_wurde_versendet">Nachricht wurde versendet</string>
-    <string name="konto_verwaltung">Konto-Verwaltung</string>
+    <string name="konto_verwaltung">Kontoverwaltung</string>
     <string name="euro">" €"</string>
     <string name="benutzerprofil">Benutzerprofil</string>
     <string name="name">Name</string>
@@ -108,7 +108,7 @@
     <string name="telefonnr_">Telefonnr.</string>
     <string name="m_chten_sie_den_besitzer_des_inserats_anrufen_">Möchtest du den Besitzer des Inserats jetzt anrufen?</string>
     <string name="title_activity_widget_konfiguration">WidgetKonfiguration</string>
-    <string name="inserat_wurde_gel_scht">Inserat wurde gelöscht</string>
+    <string name="inserat_wurde_gel_scht">Dein Inserat wurde gelöscht.</string>
     <string name="inserat_melden">Inserat melden</string>
 
 </resources>

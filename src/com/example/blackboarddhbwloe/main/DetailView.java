@@ -16,8 +16,11 @@ import android.os.Vibrator;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.GestureDetector.OnGestureListener;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.SubMenu;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.Window;
@@ -56,6 +59,9 @@ public class DetailView extends Activity implements OnTouchListener {
 
 	private String path;
 	static String inseratErsteller;
+	static String inseratTitel;
+	static String inseratInhaberID;
+	static int inseratID;
 	
 	//variable verhindert das mehrmalige Drücken den Butto Inserat melden.
 	boolean inseratWurdeGemeldet=false; 
@@ -82,6 +88,107 @@ public class DetailView extends Activity implements OnTouchListener {
 		setDetailViewImage();
 
 	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.menu_actionbar_detailview, menu);
+	    System.out.println("TEEEEEEST: " +inseratInhaberID);
+	    System.out.println("TEST: "+menu.size());
+	    System.out.println("TEST2: "+menu.getItem(2).getItemId());
+	    
+	    
+	    //Wenn das Inserat nicht dem angemeldeten User gehört dann verberge die menu-items: Löscheun und Verkauft, in der Actionbar. 
+	    if (inseratInhaberID.equals(MainActivity.USERID)==false) {
+	    	
+	    	MenuItem menuMelden = menu.findItem(R.id.action_Verkauft);
+	    	MenuItem menuLoeschen = menu.findItem(R.id.action_loeschen);
+
+	    	menu.removeItem(menuMelden.getItemId());
+	    	menu.removeItem(menuLoeschen.getItemId());
+
+	    }
+		return super.onCreateOptionsMenu(menu);
+	}
+	
+
+	
+	@Override
+	  public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	    
+	    case android.R.id.home:
+			Intent intent = new Intent("com.example.blackboarddhbwloe.main");
+			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+			finish();
+			break;
+	    case R.id.action_Kontakt:
+	    	
+	    	Intent intentAngebote = new Intent(
+					"com.example.blackboarddhbwloe.PROFILANSICHT");
+			intentAngebote.putExtra("userID",
+					Integer.toString(userID));
+			intentAngebote.putExtra("titel", inseratTitel);
+			intentAngebote.putExtra("inseratErsteller",
+					inseratErsteller);
+			startActivity(intentAngebote);
+		
+		  break;
+	    case R.id.action_Melden:
+	    	eintragMelden();
+	      break;
+	    case R.id.action_Verkauft:
+	      inseratAlsVerkauftMarkieren();
+	      break;
+	    case R.id.action_loeschen:
+	    	eintragLoeschen();
+		  break;
+	    default:
+	      break;
+	    }
+	    return true;
+	  } 
+	
+	
+	private void inseratAlsVerkauftMarkieren() {
+		
+		AlertDialog.Builder builder = new AlertDialog.Builder(DetailView.this);
+		builder.setTitle("Inserat abschließen")
+				.setMessage("Möchtest du dein Inserat als verkauft markieren?")
+				.setPositiveButton(android.R.string.yes,
+						new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+
+								// erzeuge ein Thread in dem die Abo-Daten in die DB geschrieben werden
+								new Thread(new Runnable() {
+									@Override
+									public void run() {
+										
+										String sqlStatement = "Update Inserate set status = '2' where id = "+inseratID;
+										
+										DB.addValueToDB(sqlStatement);
+									}
+								}).start();
+								Toast.makeText(getApplicationContext(),
+										"Dein Inserat wurde als verkauft markiert",
+										Toast.LENGTH_LONG).show();
+							}
+						})
+				.setNegativeButton(R.string.abbrechen,
+						new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								// do nothing
+							}
+						}).show();
+
+		
+	}
+
 	/**
 	 * reconnectFTP prÃ¼ft ob es fÃ¼r die Klasse DetailView bereits ein objekt des ImageFTPClient gibt. 
 	 * wenn nicht wird ein neues objekt erstellt und der statischen Variablen zugewiesen 
@@ -155,8 +262,12 @@ public class DetailView extends Activity implements OnTouchListener {
 				});
 
 			}
-
-			titel.setText(rs.getString("titel"));
+			
+			inseratTitel = rs.getString("titel");
+			inseratInhaberID = rs.getString("userID");
+			inseratID =  rs.getInt("id");
+			
+			titel.setText(inseratTitel);
 			preis.setText(rs.getString("preis") + getString(R.string.euro));
 			beschreibung.setText(rs.getString("beschreibung"));
 			inseratErsteller = rs.getString("username");
@@ -476,19 +587,7 @@ public class DetailView extends Activity implements OnTouchListener {
 		myFtpClient.ftpDisconnect();
 	}
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			Intent intent = new Intent("com.example.blackboarddhbwloe.main");
-			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-			startActivity(intent);
-			finish();
-			return true;
-		default:
-			return super.onOptionsItemSelected(item);
-		}
-	}
+
 
 	@Override
 	public boolean onTouch(View v, MotionEvent event) {

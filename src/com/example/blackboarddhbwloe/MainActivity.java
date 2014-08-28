@@ -15,9 +15,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.blackboarddhbwloe.tools.DB;
 import com.example.blackboarddhbwloe.useraccess.LoginScreen;
@@ -54,6 +58,42 @@ public class MainActivity extends Activity {
 		startActivity(homeIntent);
 		super.onBackPressed();
 	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.main, menu);
+		return super.onCreateOptionsMenu(menu);
+	}
+	
+	@Override
+	  public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	    case R.id.action_Support:
+	    	Intent intentActionbar = new Intent("com.example.blackboarddhbwloe.KONTAKT");
+			intentActionbar.putExtra("from", "support");
+			startActivity(intentActionbar);
+		
+		  break;
+	    case R.id.action_Feedback:
+	    	Intent intentActionbar2 = new Intent("com.example.blackboarddhbwloe.KONTAKT");
+			intentActionbar2.putExtra("from", "feedback");
+			startActivity(intentActionbar2);
+			
+	      break;
+	    case R.id.action_Datenschutz:
+	      Toast.makeText(this, "öffne die Datenschutzerklärung", Toast.LENGTH_SHORT)
+	          .show();
+	      break;
+	    case R.id.action_Beenden:
+		      Toast.makeText(this, "Anwenung beenden", Toast.LENGTH_SHORT)
+		          .show();
+		  break;
+	    default:
+	      break;
+	    }
+	    return true;
+	  } 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -166,20 +206,6 @@ public class MainActivity extends Activity {
 		buttonStatusSelected.setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient_dhbw_icon_bar_selected));
 		
 		
-		
-//		Button buttonBar = (Button) findViewById(R.id.ImageButton01);
-//		buttonBar.setOnClickListener(new View.OnClickListener() {
-//
-//			@Override
-//			public void onClick(View v) {
-//				Intent intentAngebote = new Intent(
-//						"com.example.blackboarddhbwloe.INSERATLISTE");
-//
-//				startActivity(intentAngebote);
-//				
-//			}
-//		});	
-		
 		Button buttonSucheBar = (Button) findViewById(R.id.ImageButton02);
 		buttonSucheBar.setOnClickListener(new View.OnClickListener() {
 
@@ -213,11 +239,9 @@ public class MainActivity extends Activity {
 				}
 			}
 		});
-
-		
-		
 	}
 
+	
 	private void starteNotificationListener() {
 		
 				

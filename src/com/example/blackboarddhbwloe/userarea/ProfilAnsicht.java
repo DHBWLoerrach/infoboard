@@ -79,6 +79,7 @@ public class ProfilAnsicht extends Activity {
 			public void onClick(View v) {
 				Intent intentAngebote = new Intent(
 						"com.example.blackboarddhbwloe.KONTAKT");
+				intentAngebote.putExtra("from", "kontakt");
 				intentAngebote.putExtra("titel", inserattitel);
 				intentAngebote.putExtra("inseratErsteller", erstellerName);
 				startActivity(intentAngebote);

@@ -64,9 +64,9 @@
                     android:layout_marginBottom="10dp"
                     android:hint="@string/betrifft_inserattitel"
                     android:padding="5dp"
+                    android:text="Inserat: "
                     android:textSize="17sp"
-                    android:textStyle="bold"
-                     />
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/tv_kontakt_betreff"
@@ -92,15 +92,15 @@
                     android:inputType="textMultiLine"
                     android:textSize="20sp" />
 
+                <Button
+                    android:id="@+id/button_kontaktformular_senden"
+                    style="@style/DHBW_Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/senden" />
+
             </LinearLayout>
         </ScrollView>
-
-    <Button
-        android:id="@+id/button_kontaktformular_senden"
-        style="@style/DHBW_Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/senden" />
 
 </LinearLayout>
 
