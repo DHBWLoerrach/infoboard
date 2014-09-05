@@ -14,6 +14,8 @@ import com.example.blackboarddhbwloe.R;
 import com.example.blackboarddhbwloe.tools.DB;
 
 public class KontoVerwaltung extends Activity {
+	
+	boolean sucheBieteSichtbar = false;
 
 	@Override
 	public void onBackPressed() {
@@ -75,21 +77,12 @@ public class KontoVerwaltung extends Activity {
 
 		//Funktion iconBar: Farbschema anpassen
 		
-//		Button buttonBar = (Button) findViewById(R.id.ImageButton01);
-//		buttonBar.setOnClickListener(new View.OnClickListener() {
-//
-//			@Override
-//			public void onClick(View v) {
-//				Intent intentAngebote = new Intent(
-//						"com.example.blackboarddhbwloe.INSERATLISTE");
-//
-//				startActivity(intentAngebote);
-//				
-//			}
-//		});	
+//		defaultcolor für das icon wenn es angeklickt wurde
+		Button buttonStatusSelected = (Button) findViewById(R.id.ImageButton04);
+		buttonStatusSelected.setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient_dhbw_icon_bar_selected));
 		
-		Button buttonSucheBar = (Button) findViewById(R.id.ImageButton02);
-		buttonSucheBar.setOnClickListener(new View.OnClickListener() {
+		Button buttonDetailSucheBar = (Button) findViewById(R.id.ImageButton02);
+		buttonDetailSucheBar.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -101,8 +94,8 @@ public class KontoVerwaltung extends Activity {
 			}
 		});		
 		
-		Button buttonSucheBar2 = (Button) findViewById(R.id.ImageButton03);
-		buttonSucheBar2.setOnClickListener(new View.OnClickListener() {
+		Button buttonHomeBar = (Button) findViewById(R.id.ImageButton03);
+		buttonHomeBar.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -135,6 +128,68 @@ public class KontoVerwaltung extends Activity {
 			}
 		});
 
+		
+		Button buttonSucheBar = (Button) findViewById(R.id.Button05);
+		buttonSucheBar.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				String sql = "Select * From Inserate Where biete = 1 order by datum desc;";
+				Bundle container = new Bundle();
+				container.putString("sql", sql);
+
+				Intent intentAngebote = new Intent("com.example.blackboarddhbwloe.INSERATLISTE");
+				intentAngebote.putExtras(container);
+
+				intentAngebote.putExtra("barTitle", "Angebote");
+				startActivity(intentAngebote);
+				finish();
+
+			}
+		});
+
+		Button buttonBieteBar = (Button) findViewById(R.id.Button06);
+		buttonBieteBar.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				String sql = "Select * From Inserate Where biete = 0 order by datum desc;";
+				Bundle container = new Bundle();
+				container.putString("sql", sql);
+
+				Intent intentAngebote = new Intent("com.example.blackboarddhbwloe.INSERATLISTE");
+				intentAngebote.putExtras(container);
+
+				intentAngebote.putExtra("barTitle", "Gesuche");
+				startActivity(intentAngebote);
+				finish();
+				
+			}
+		});
+
+		
+		Button buttonSucheBieteBar = (Button) findViewById(R.id.ImageButton01);
+		buttonSucheBieteBar.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				
+				//open/close SucheBiete Bar
+				Button buttonSucheSelected = (Button) findViewById(R.id.Button05);
+				Button buttonBieteSelected = (Button) findViewById(R.id.Button06);
+				if (sucheBieteSichtbar==false)
+				{					
+					buttonSucheSelected.setVisibility(View.VISIBLE);
+					buttonBieteSelected.setVisibility(View.VISIBLE);
+					sucheBieteSichtbar=true;
+				}
+				else
+				{
+					buttonSucheSelected.setVisibility(View.INVISIBLE);
+					buttonBieteSelected.setVisibility(View.INVISIBLE);
+					sucheBieteSichtbar=false;
+				}
+
+				}
+			
+		});
 		
 	}
 	

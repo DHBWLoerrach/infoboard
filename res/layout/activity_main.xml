@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
-        android:layout_marginBottom="43dp" >
+        android:layout_marginBottom="20dp" >
 
         <TextView
             android:id="@+id/tv_anmedestatus"
@@ -27,74 +27,95 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:orientation="vertical" >
+        android:layout_marginBottom="30dp"
+        android:background="@color/DHBW_gray_light"
+        android:orientation="vertical"
+        android:padding="10dp" >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="5dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:weightSum="2" >
+            android:layout_height="wrap_content" >
 
-            <Button
-                android:id="@+id/ButtonAngebote"
-                style="@style/DHBW_icon_Button"
-                android:layout_width="200dp"
-                android:layout_height="120dp"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/gradient_dhbw_icon_button"
-                android:drawableTop="@drawable/icon_angebote"
-                android:text="@string/angebote" />
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/icon_main_willkommen" />
 
-            <Button
-                android:id="@+id/ButtonGesuche"
-                style="@style/DHBW_icon_Button"
-                android:layout_width="200dp"
-                android:layout_height="120dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="1"
-                android:drawableTop="@drawable/icon_gesuche"
-                android:text="@string/gesuche" />
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Herzlich Willkommen bei BulletinBoard DHBW" />
+
         </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:background="@color/DHBW_gray_light"
+        android:orientation="vertical"
+        android:padding="10dp" >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="5dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:weightSum="2" >
+            android:layout_height="wrap_content" >
 
-            <Button
-                android:id="@+id/ButtonDetailSuche"
-                style="@style/DHBW_icon_Button"
-                android:layout_width="200dp"
-                android:layout_height="120dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:drawableTop="@drawable/icon_detailsuche"
-                android:text="@string/_detail_nsuche" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/icon_main_info" />
 
-            <Button
-                android:id="@+id/ButtonBenutzerbereich"
-                style="@style/DHBW_icon_Button"
-                android:layout_width="200dp"
-                android:layout_height="120dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="1"
-                android:drawableTop="@drawable/icon_benutzerbereich"
-                android:text="@string/benutzer_nbereich" />
+            <TextView
+                android:id="@+id/TextView01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Aktuell gibt es x Angebote und x Gesuche" />
+
         </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:background="@color/DHBW_gray_light"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/icon_news" />
+
+            <TextView
+                android:id="@+id/TextView02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Newsbox" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="33dp"
+            android:text="Es ist eine neue Version im App-Store verfügbar und zum Download bereit." />
+
     </LinearLayout>
 
     <LinearLayout
@@ -105,7 +126,35 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <Button
+            android:id="@+id/Button05"
+            style="@style/DHBW_icon_bar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/bb_telicon"
+            android:text="Suche"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/Button06"
+            style="@style/DHBW_icon_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/bb_telicon"
+            android:text="Biete"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:gravity="bottom"
         android:orientation="horizontal"

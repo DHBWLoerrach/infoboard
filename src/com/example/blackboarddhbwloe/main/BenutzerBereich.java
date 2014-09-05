@@ -11,6 +11,8 @@ import com.example.blackboarddhbwloe.MainActivity;
 import com.example.blackboarddhbwloe.R;
 
 public class BenutzerBereich extends Activity {
+	
+	boolean sucheBieteSichtbar = false;
 
 	// Definiere welche activity angezeigt wird wenn der zurueckbutton
 	// gedrueckt wird
@@ -88,6 +90,70 @@ public class BenutzerBereich extends Activity {
 		});
 		
 		
+		Button buttonSucheBar = (Button) findViewById(R.id.Button05);
+		buttonSucheBar.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				String sql = "Select * From Inserate Where biete = 1 order by datum desc;";
+				Bundle container = new Bundle();
+				container.putString("sql", sql);
+
+				Intent intentAngebote = new Intent("com.example.blackboarddhbwloe.INSERATLISTE");
+				intentAngebote.putExtras(container);
+
+				intentAngebote.putExtra("barTitle", "Angebote");
+				startActivity(intentAngebote);
+				finish();
+
+			}
+		});
+
+		Button buttonBieteBar = (Button) findViewById(R.id.Button06);
+		buttonBieteBar.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				String sql = "Select * From Inserate Where biete = 0 order by datum desc;";
+				Bundle container = new Bundle();
+				container.putString("sql", sql);
+
+				Intent intentAngebote = new Intent("com.example.blackboarddhbwloe.INSERATLISTE");
+				intentAngebote.putExtras(container);
+
+				intentAngebote.putExtra("barTitle", "Gesuche");
+				startActivity(intentAngebote);
+				finish();
+				
+			}
+		});
+
+		
+		Button buttonSucheBieteBar = (Button) findViewById(R.id.ImageButton01);
+		buttonSucheBieteBar.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				
+				//open/close SucheBiete Bar
+				Button buttonSucheSelected = (Button) findViewById(R.id.Button05);
+				Button buttonBieteSelected = (Button) findViewById(R.id.Button06);
+				
+				if (sucheBieteSichtbar==false)
+				{					
+					buttonSucheSelected.setVisibility(View.VISIBLE);
+					buttonBieteSelected.setVisibility(View.VISIBLE);
+					sucheBieteSichtbar=true;
+				}
+				else
+				{
+					buttonSucheSelected.setVisibility(View.INVISIBLE);
+					buttonBieteSelected.setVisibility(View.INVISIBLE);
+					sucheBieteSichtbar=false;
+				}
+
+				}
+			
+		});
+		
+		
 //Funktion iconBar: Farbschema anpassen
 		
 		
@@ -100,21 +166,8 @@ public class BenutzerBereich extends Activity {
 		
 		
 		
-//		Button buttonBar = (Button) findViewById(R.id.ImageButton01);
-//		buttonBar.setOnClickListener(new View.OnClickListener() {
-//
-//			@Override
-//			public void onClick(View v) {
-//				Intent intentAngebote = new Intent(
-//						"com.example.blackboarddhbwloe.INSERATLISTE");
-//
-//				startActivity(intentAngebote);
-//				
-//			}
-//		});	
-		
-		Button buttonSucheBar = (Button) findViewById(R.id.ImageButton02);
-		buttonSucheBar.setOnClickListener(new View.OnClickListener() {
+		Button buttonDetailSucheBar = (Button) findViewById(R.id.ImageButton02);
+		buttonDetailSucheBar.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
