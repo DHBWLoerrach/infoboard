@@ -48,7 +48,6 @@
             android:ems="10"
             android:gravity="left"
             android:hint="@string/benutzer"
-            android:text="@string/komiatsm"
             android:textSize="23sp" />
 
         <EditText
@@ -60,7 +59,6 @@
             android:ems="10"
             android:hint="@string/passwort"
             android:inputType="textPassword"
-            android:text="@string/k1"
             android:textSize="23sp" >
 
             <requestFocus />
