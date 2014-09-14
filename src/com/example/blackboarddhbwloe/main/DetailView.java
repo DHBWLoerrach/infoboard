@@ -20,7 +20,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
-import android.view.SubMenu;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.Window;
@@ -154,8 +153,8 @@ public class DetailView extends Activity implements OnTouchListener {
 	private void inseratAlsVerkauftMarkieren() {
 		
 		AlertDialog.Builder builder = new AlertDialog.Builder(DetailView.this);
-		builder.setTitle("Inserat abschlieﬂen")
-				.setMessage("Mˆchtest du dein Inserat als verkauft markieren?")
+		builder.setTitle("Inserat abschlieﬂen?")
+				.setMessage("Das Inserat wird danach nicht mehr angezeigt.")
 				.setPositiveButton(android.R.string.yes,
 						new DialogInterface.OnClickListener() {
 							@Override
@@ -248,20 +247,6 @@ public class DetailView extends Activity implements OnTouchListener {
 		try {
 			rs.next();
 
-			// Wenn das Inserat dem angemeldeten User geh√∂rt dann erzeuge den
-			// loeschenButton
-			if (rs.getString("userID").equals(MainActivity.USERID)) {
-				Button buttonEntfernen = (Button) findViewById(R.id.button_detailView_angebotEntfernen);
-				buttonEntfernen.setVisibility(View.VISIBLE);
-				buttonEntfernen.setOnClickListener(new View.OnClickListener() {
-
-					@Override
-					public void onClick(View v) {
-						eintragLoeschen();
-					}
-				});
-
-			}
 			
 			inseratTitel = rs.getString("titel");
 			inseratInhaberID = rs.getString("userID");
@@ -285,45 +270,6 @@ public class DetailView extends Activity implements OnTouchListener {
 			getActionBar().setTitle(sucheBiete + " : " + rs.getString("titel"));
 
 			setDetailViewImage();
-
-			ImageButton contactform = (ImageButton) findViewById(R.id.button_detailview_profilansicht);
-			contactform.setOnClickListener(new View.OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-					// Wenn Benutzer angemeldet
-					if (MainActivity.isAnmeldestatus() == true) {
-
-						Intent intentAngebote = new Intent(
-								"com.example.blackboarddhbwloe.PROFILANSICHT");
-						intentAngebote.putExtra("userID",
-								Integer.toString(userID));
-						intentAngebote.putExtra("titel", titel.getText()
-								.toString());
-						intentAngebote.putExtra("inseratErsteller",
-								inseratErsteller);
-						startActivity(intentAngebote);
-
-					} else {
-						// Weiterleitung zum Login
-						Intent intentLogin = new Intent(
-								"com.example.blackboarddhbwloe.LOGINSCREEN");
-						intentLogin.putExtra("activity", "fromProfilansicht");
-						startActivity(intentLogin);
-
-					}
-				}
-			});
-			
-			Button buttonInseratMelden = (Button) findViewById(R.id.button_detailView_inseratMelden);
-			buttonInseratMelden.setVisibility(View.VISIBLE);
-			buttonInseratMelden.setOnClickListener(new View.OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-					eintragMelden();
-				}
-			});
 
 		} catch (SQLException e) {
 
@@ -390,7 +336,7 @@ public class DetailView extends Activity implements OnTouchListener {
 									- e2.getAxisValue(MotionEvent.AXIS_Y)));
 
 					if (Math.abs(e1.getAxisValue(MotionEvent.AXIS_Y)
-							- e2.getAxisValue(MotionEvent.AXIS_Y)) <= 250) {
+							- e2.getAxisValue(MotionEvent.AXIS_Y)) <= 110) {
 						if (e1.getAxisValue(MotionEvent.AXIS_X) <= e2
 								.getAxisValue(MotionEvent.AXIS_X)) {
 							if (DetailView.POSITION > 0) {

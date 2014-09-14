@@ -60,26 +60,6 @@
             android:gravity="center_horizontal"
             android:orientation="horizontal"
             android:weightSum="2" >
-
-            <Button
-                android:id="@+id/ButtonSetLastLogin"
-                style="@style/DHBW_icon_Button"
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:drawableTop="@drawable/icon_detailsuche"
-                android:text="reset\nLogin" />
-
-            <Button
-                android:id="@+id/ButtonBenutzerbereich_MeineAbos"
-                style="@style/DHBW_icon_Button"
-                android:layout_width="200dp"
-                android:layout_height="120dp"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="1"
-                android:drawableTop="@drawable/icon_benutzerbereich"
-                android:text="leer" />
         </LinearLayout>
     </LinearLayout>
 

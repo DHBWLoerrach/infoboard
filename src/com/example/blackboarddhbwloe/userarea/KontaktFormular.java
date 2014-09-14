@@ -1,7 +1,11 @@
 package com.example.blackboarddhbwloe.userarea;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,20 +16,12 @@ import android.widget.Toast;
 
 import com.example.blackboarddhbwloe.MainActivity;
 import com.example.blackboarddhbwloe.R;
+import com.example.blackboarddhbwloe.tools.DB;
 import com.example.blackboarddhbwloe.tools.Mail;
 
 public class KontaktFormular extends Activity {
 
-	// //Definiere welche activity angezeigt wird wenn der zurï¿½ckbutton
-	// gedrï¿½cht wird
-	// @Override
-	// public void onBackPressed() {
-	// Intent intentAngebote = new
-	// Intent("com.example.blackboarddhbwloe.DETAILVIEW");
-	// startActivity(intentAngebote);
-	// super.onBackPressed();
-	// }
-
+	private String adminMailAdress = "";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -39,8 +35,6 @@ public class KontaktFormular extends Activity {
 		final EditText nachricht = (EditText) findViewById(R.id.tv_kontakt_nachricht);
 		final EditText betreff = (EditText) findViewById(R.id.tv_kontakt_betreff);
 
-		System.out.println("FFFFFROM: "+intentFromDetailView.getStringExtra("from"));
-		
 		if(fromActivity.equals("kontakt"))
 		{
 			System.out.println("Ich Kontaktiere");
@@ -75,15 +69,30 @@ public class KontaktFormular extends Activity {
 				}
 			});
 		}
+		else
+		{
+			//Hole Emailadresse von verantwortlichem Support
+			String sqlStatement2 = "SELECT benutzername from tblAdmin";
+			try {
+				ResultSet rs1 = DB.getRSFromDB(sqlStatement2);
+				rs1.next();
+				adminMailAdress=rs1.getString(1);
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 			if(fromActivity.equals("support"))
 			{
 				System.out.println("Ich Supporte");
 				getActionBar().setTitle("Supportanfrage");
 				titel.setText("Ich habe eine Frage zu:");
-				final String usernameKontakt = MainActivity.USERNAME;
+				final String usernameKontakt = adminMailAdress;
 
 				
 				betreff.setText("Supportanfrage");
+				betreff.setTextColor(Color.BLACK);
 				betreff.setEnabled(false);
 				
 				Button button2 = (Button) findViewById(R.id.button_kontaktformular_senden);
@@ -110,13 +119,13 @@ public class KontaktFormular extends Activity {
 					}
 				});
 
-		}
+		}}
 		
 		if(fromActivity.equals("feedback"))
 		{
 			getActionBar().setTitle("Feedback");
 			titel.setText("Ich möchte helfen, die App zu verbessern.");
-			final String usernameKontakt = MainActivity.USERNAME;
+			final String usernameKontakt = adminMailAdress;
 			
 			betreff.setText("Feedback");
 			betreff.setTextColor(getResources().getColor(R.color.black));

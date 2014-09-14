@@ -44,13 +44,13 @@ public class BenutzerBereich extends Activity {
 			}
 		});
 
-		Button buttonGesuche = (Button) findViewById(R.id.ButtonMeineAnzeigen);
-		buttonGesuche.setOnClickListener(new View.OnClickListener() {
+		Button buttonMeineAnzeigen = (Button) findViewById(R.id.ButtonMeineAnzeigen);
+		buttonMeineAnzeigen.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				String sql = "Select * From Inserate Where userID = "
-						+ MainActivity.USERID + ";";
+						+ MainActivity.USERID;
 				Bundle container = new Bundle();
 				container.putString("sql", sql);
 
@@ -77,8 +77,8 @@ public class BenutzerBereich extends Activity {
 			}
 		});
 
-		Button buttonSuche = (Button) findViewById(R.id.ButtonBenutzerbereich_MeineAbos);
-		buttonSuche.setOnClickListener(new View.OnClickListener() {
+		Button buttonMeineAbos = (Button) findViewById(R.id.ButtonBenutzerbereich_MeineAbos);
+		buttonMeineAbos.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {

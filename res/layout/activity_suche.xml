@@ -203,6 +203,34 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <Button
+            android:id="@+id/Button05"
+            style="@style/DHBW_icon_bar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/bb_telicon"
+            android:text="Suche"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/Button06"
+            style="@style/DHBW_icon_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/bb_telicon"
+            android:text="Biete"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="65dp"
         android:gravity="bottom"
         android:orientation="horizontal"

@@ -1,7 +1,5 @@
 package com.example.blackboarddhbwloe.userarea;
 
-import java.sql.Date;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +9,6 @@ import android.widget.Button;
 
 import com.example.blackboarddhbwloe.MainActivity;
 import com.example.blackboarddhbwloe.R;
-import com.example.blackboarddhbwloe.tools.DB;
 
 public class KontoVerwaltung extends Activity {
 	
@@ -55,22 +52,6 @@ public class KontoVerwaltung extends Activity {
 				Intent intentAngebote = new Intent("com.example.blackboarddhbwloe.MEINBENUTZERPROFIL");
 				startActivity(intentAngebote);
 				finish();
-			}
-		});
-
-		Button buttonAnzeigeSchalten = (Button) findViewById(R.id.ButtonSetLastLogin);
-		buttonAnzeigeSchalten.setOnClickListener(new View.OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				DB.aktualisiereLetzterAngebotsAufrufInUserTable("2014-02-08 10:10:10");
-				int year = 114;
-				int month = 1;
-				int day = 8;
-				@SuppressWarnings("deprecation")
-				Date d = new Date(year, month, day);
-
-				MainActivity.LASTLOGIN = d;
 			}
 		});
 

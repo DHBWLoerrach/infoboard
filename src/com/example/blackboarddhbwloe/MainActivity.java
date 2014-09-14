@@ -83,13 +83,10 @@ public class MainActivity extends Activity {
 			
 	      break;
 	    case R.id.action_Datenschutz:
-	      Toast.makeText(this, "öffne die Datenschutzerklärung", Toast.LENGTH_SHORT)
+	      Toast.makeText(this, R.string._ffne_die_datenschutzerkl_rung, Toast.LENGTH_SHORT)
 	          .show();
 	      break;
-	    case R.id.action_Beenden:
-		      Toast.makeText(this, "Anwenung beenden", Toast.LENGTH_SHORT)
-		          .show();
-		  break;
+	   
 	    default:
 	      break;
 	    }
@@ -117,12 +114,28 @@ public class MainActivity extends Activity {
 		}
 		
 
-		TextView tvUsername = (TextView) findViewById(R.id.tv_anmedestatus);
-		if (!USERNAME.equals("")) {
-			tvUsername.setText(getString(R.string.sie_sind_angemeldet_als_) + USERNAME);
-
+		
+		//MainScreen Infos eintragen
+		
+		TextView tv_anzahlInserate = (TextView) findViewById(R.id.main_anzahlInserate);
+		tv_anzahlInserate.setText("Aktuell gibt es "+ Splash.anzahlSuche +" Angebote und "+ Splash.anzahlBiete +" Gesuche");
+		
+		TextView tv_Inserat1 = (TextView) findViewById(R.id.main_Inserat1);
+		TextView tv_Inserat2 = (TextView) findViewById(R.id.main_Inserat2);
+		TextView tv_Inserat3 = (TextView) findViewById(R.id.main_Inserat3);
+		try {
+			Splash.rsHome.next();
+			tv_Inserat1.setText("1. "+Splash.rsHome.getString(1));
+			Splash.rsHome.next();
+			tv_Inserat2.setText("2. "+Splash.rsHome.getString(1));
+			Splash.rsHome.next();
+			tv_Inserat3.setText("3. "+Splash.rsHome.getString(1));
+			
+			Splash.rsHome.beforeFirst();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-
 		
 	
 		
@@ -220,7 +233,6 @@ public class MainActivity extends Activity {
 					buttonBieteSelected.setVisibility(View.INVISIBLE);
 					sucheBieteSichtbar=false;
 				}
-
 				}
 			
 		});
@@ -316,6 +328,9 @@ public class MainActivity extends Activity {
 						
 						notificationErzeugt=true;
 						System.out.println("NotificationService hat nach neuen Einträgen gesucht.");
+						
+						//aktuelisiere Home Screen daten
+						aktualisiereDatenHomescreen();
 					}
 				}
 			}
@@ -365,6 +380,35 @@ public class MainActivity extends Activity {
 
 	}
 	
+	public void aktualisiereDatenHomescreen() {
+		
+		String sqlStatement = "SELECT titel,datum FROM BBDB.Inserate order by id desc limit 3";
+		Splash.rsHome = DB.getRSFromDB(sqlStatement);
+		
+		
+		String sqlStatement2 = "SELECT count(id) from Inserate where biete = 1";
+		try {
+			ResultSet rs1 = DB.getRSFromDB(sqlStatement2);
+			rs1.next();
+			Splash.anzahlSuche=rs1.getString(1);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
+		String sqlStatement3 = "SELECT count(id) from Inserate where biete = 0";
+		try {
+			ResultSet rs2 = DB.getRSFromDB(sqlStatement3);
+			rs2.next();
+			Splash.anzahlBiete=rs2.getString(1);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	private void datenverbindungFehlgeschlagen()
 	{
 	AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);

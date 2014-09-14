@@ -23,7 +23,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.blackboarddhbwloe.splash"
+            android:name="com.example.blackboarddhbwloe.Splash"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>

@@ -53,6 +53,7 @@
                 android:layout_gravity="left"
                 android:layout_marginBottom="10dp"
                 android:layout_row="0"
+                android:maxLength="20"
                 android:background="@color/DHBW_white"
                 android:ems="10"
                 android:inputType="text" />

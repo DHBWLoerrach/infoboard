@@ -18,20 +18,4 @@
         android:showAsAction="never"
         android:title="Datenschutz"/>
     
-        <item
-        android:id="@+id/action_Beenden"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="Beenden"/>
-    
-    <item
-        android:id="@+id/action_refresh"
-        android:orderInCategory="100"
-        android:showAsAction="always"
-        android:icon="@drawable/icon_benutzerbereich"
-        android:title="Refresh"/>
-    
-
-    
-
 </menu>

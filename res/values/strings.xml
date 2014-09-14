@@ -110,5 +110,8 @@
     <string name="title_activity_widget_konfiguration">WidgetKonfiguration</string>
     <string name="inserat_wurde_gel_scht">Dein Inserat wurde gelöscht.</string>
     <string name="inserat_melden">Inserat melden</string>
+    <string name="m_chtest_du_die_app_wirklich_beenden_">Möchtest du die App wirklich beenden?</string>
+    <string name="_ffne_die_datenschutzerkl_rung">öffne die Datenschutzerklärung</string>
+    <string name="es_ist_eine_neue_version_im_play_store_verf_gbar_und_zum_download_bereit_">Es ist eine neue Version im Play-Store verfügbar und zum Download bereit.</string>
 
 </resources>

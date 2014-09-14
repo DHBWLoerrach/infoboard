@@ -125,12 +125,12 @@ public class AnzeigeSchalten extends Activity {
 		}
 
 		// im falle einer
-		if (biete == 1) {
+//		if (biete == 1) {
 			if (preis.getText().toString().equals("")) {
 				preis.setError(getString(R.string.bitte_preis_angeben));
 				preisError = true;
 			}
-		}
+//		}
 
 		// Titelfeld wird ueberprueft ob eine Eingabe erfolgt ist
 		if (titel.getText().toString().equals("")) {
@@ -146,9 +146,9 @@ public class AnzeigeSchalten extends Activity {
 			String k = "" + kategorie.getSelectedItemId();
 			String p = preis.getText().toString();
 			
-			if (biete == 0) {
-				p = "" + 0;
-			}
+//			if (biete == 0) {
+//				p = "" + 0;
+//			}
 			String b = beschreibung.getText().toString();
 
 			String sqlStatement = "INSERT INTO `BBDB`.`Inserate` (`titel`, `kategorie`,`preis`,`beschreibung`, `userID`,`datum`,`biete`) VALUES ('"
