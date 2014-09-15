@@ -60,7 +60,7 @@ public class RegistrationScreen extends Activity {
 							String usr = user.getText().toString();
 							String psw = createPassword();
 							
-							DB.addValueToDB("INSERT INTO `BBDB`.`tblUser` (`username`, `psw`, `initial`) VALUES ('"+usr+"', '"+psw+"', '0');");
+							DB.addValueToDB("INSERT INTO `BBDB`.`tblUser` (`username`, `psw`, `initial`, lastLogin) VALUES ('"+usr+"', '"+psw+"', '0', '2013-01-01 00:00:00');");
 							String message = "Ihre Anmeldedaten : \n Username: "+usr+"\n Initialpasswort: "+psw+getString(R.string._mit_freundlichen_gr_ssen_ihr_bbteam);
 							Mail.sendMail(usr, message, "Registrierung BBDHBW");
 							intentLogin.putExtra("activity", "fromRegistration");
