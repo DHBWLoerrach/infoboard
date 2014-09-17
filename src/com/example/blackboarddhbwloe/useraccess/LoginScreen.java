@@ -40,6 +40,9 @@ public class LoginScreen extends Activity {
 
 		getActionBar().setTitle(R.string.anmeldung);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
+		final TextView user = (TextView) findViewById(R.id.Anmeldung_LoginScreen_Username);
+		user.requestFocus();
 
 		Button button = (Button) findViewById(R.id.button_LoginScreen_Anmeldung);
 		button.setOnClickListener(new View.OnClickListener() {
@@ -47,7 +50,7 @@ public class LoginScreen extends Activity {
 			@Override
 			public void onClick(View v) {
 
-				TextView user = (TextView) findViewById(R.id.Anmeldung_LoginScreen_Username);
+				
 				TextView pass = (TextView) findViewById(R.id.Anmeldung_LoginScreen_Pass);
 				try {
 					ResultSet resultset = DB

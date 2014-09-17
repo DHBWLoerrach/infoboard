@@ -46,6 +46,7 @@
             android:layout_marginBottom="15dp"
             android:background="@color/DHBW_white"
             android:ems="10"
+            android:singleLine="true"
             android:gravity="left"
             android:hint="@string/benutzer"
             android:textSize="23sp" />
